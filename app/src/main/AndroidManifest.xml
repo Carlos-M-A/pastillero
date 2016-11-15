@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <!--<meta-data
+        <meta-data
             android:name="DATABASE"
             android:value="bd_pastillero.db" />
         <meta-data
@@ -30,7 +30,7 @@
             android:value="true" />
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
-            android:value="grupoasimov.pastillero.Modelo" />-->
+            android:value="grupoasimov.pastillero.Modelo" />
 
     </application>
 

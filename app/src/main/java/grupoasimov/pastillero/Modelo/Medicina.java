@@ -13,4 +13,55 @@ public class Medicina extends SugarRecord {
     int cantidadPorcion; // en miligramos
     String urlImagen;
 
+    public Medicina() {
+    }
+
+    public Medicina(String nombre, String descripcion, int cantidadPorcion, String urlImagen) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.cantidadPorcion = cantidadPorcion;
+        this.urlImagen = urlImagen;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getCantidadPorcion() {
+        return cantidadPorcion;
+    }
+
+    public void setCantidadPorcion(int cantidadPorcion) {
+        this.cantidadPorcion = cantidadPorcion;
+    }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+
+    @Override
+    public String toString() {
+        return "Medicina{" +
+                "nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", cantidadPorcion=" + cantidadPorcion +
+                ", urlImagen='" + urlImagen + '\'' +
+                '}';
+    }
 }
