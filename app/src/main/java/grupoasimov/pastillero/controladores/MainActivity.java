@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent i = new Intent(this, CrearMedicina.class);
         i.putExtra("actualizar", false);
-        i.putExtra("idMedicina", 3);
+        i.putExtra("idMedicina", 7);
         startActivity(i);
     }
 }
