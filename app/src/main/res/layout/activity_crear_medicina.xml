@@ -26,15 +26,12 @@
                 android:text="INTRODUCIR DATOS MEDICINA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView5" />
+                android:id="@+id/textView5"
+                android:textStyle="normal|bold" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="30dp" />
 
             <TextView
                 android:text="NOMBRE"
@@ -48,29 +45,30 @@
                 android:inputType="textPersonName"
                 android:text="Name"
                 android:ems="10"
-                android:id="@+id/editText3" />
+                android:id="@+id/nombreMedicina"
+                android:selectAllOnFocus="true" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="20dp" />
 
             <TextView
                 android:text="DESCRIPCION"
                 android:layout_width="match_parent"
-                android:layout_height="204dp"
+                android:layout_height="wrap_content"
                 android:id="@+id/textView7" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Name"
+                android:layout_height="136dp"
+                android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/editText6" />
+                android:id="@+id/descripcionMedicina"
+                android:text="Descripcion" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="20dp" />
 
             <TextView
                 android:text="Porción de cada pastilla en miligramos"
@@ -83,8 +81,13 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/editText5"
-                android:text="89" />
+                android:id="@+id/porcionMedicina"
+                android:text="89"
+                android:selectAllOnFocus="true" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
             <TextView
                 android:text="Fotografia"
@@ -92,11 +95,21 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView9" />
 
-            <ImageView
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="85dp"
+                android:layout_height="140dp"
                 app:srcCompat="@android:drawable/ic_menu_camera"
-                android:id="@+id/imageView" />
+                android:id="@+id/imagenMedicina" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <Button
+                android:text="GUARDAR MEDICINA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/guardarMedicina" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
