@@ -16,7 +16,7 @@
         android:text="Hello World!" />
 
     <Button
-        android:text="Button"
+        android:text="CREAR MEDICINA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView"
@@ -24,4 +24,13 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="76dp"
         android:id="@+id/button" />
+
+    <Button
+        android:text="CREAR ALARMA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginTop="25dp"
+        android:id="@+id/button2" />
 </RelativeLayout>

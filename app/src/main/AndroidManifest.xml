@@ -30,7 +30,8 @@
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="grupoasimov.pastillero.Modelo" />
 
-        <activity android:name=".controladores.CrearMedicina"></activity>
+        <activity android:name=".controladores.CrearMedicina" />
+        <activity android:name=".controladores.CrearAlarmas"></activity>
     </application>
 
 </manifest>

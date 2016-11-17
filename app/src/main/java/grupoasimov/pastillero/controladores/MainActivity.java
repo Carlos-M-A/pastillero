@@ -16,13 +16,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        Intent i = new Intent(this, CrearMedicina.class);
-        i.putExtra("actualizar", false);
-        i.putExtra("idMedicina", 7);
-        startActivity(i);
+        switch (v.getId()) {
+            case R.id.button:
+                Intent i = new Intent(this, CrearMedicina.class);
+                i.putExtra("actualizar", false);
+                i.putExtra("idMedicina", 7);
+                startActivity(i);
+                break;
+            case R.id.button2:
+                Intent e = new Intent(this, CrearAlarmas.class);
+                e.putExtra("idMedicina", 1);
+                startActivity(e);
+                break;
+    }
     }
 }
