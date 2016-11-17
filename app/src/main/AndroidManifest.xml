@@ -19,7 +19,7 @@
 
         <meta-data
             android:name="DATABASE"
-            android:value="bd_pastillero.db" />
+            android:value="bd_pastillero2.db" />
         <meta-data
             android:name="VERSION"
             android:value="1" />

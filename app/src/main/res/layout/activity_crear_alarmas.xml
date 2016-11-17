@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView10" />
 
-            <CalendarView
+            <DatePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fechaInicio" />
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView11" />
 
-            <CalendarView
+            <DatePicker
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/fechaFin" />
@@ -87,7 +87,8 @@
                 android:text="LUNES"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxLunes" />
+                android:id="@+id/checkBoxLunes"
+                android:checked="true" />
 
             <CheckBox
                 android:text="MARTES"
@@ -175,7 +176,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/porcionAlarma" />
+                android:id="@+id/porcionAlarma"
+                android:text="30" />
 
             <Space
                 android:layout_width="match_parent"
@@ -193,7 +195,8 @@
                 android:ems="10"
                 android:id="@+id/notaAlarma"
                 android:layout_weight="0.16"
-                android:layout_height="150dp" />
+                android:layout_height="150dp"
+                android:text="Apuntes sobre la alarma" />
 
             <Space
                 android:layout_width="match_parent"

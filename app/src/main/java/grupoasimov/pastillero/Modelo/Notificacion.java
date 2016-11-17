@@ -2,6 +2,8 @@ package grupoasimov.pastillero.Modelo;
 
 import com.orm.SugarRecord;
 
+import java.util.Calendar;
+
 
 /**
  * Created by ferreri on 15/11/16.
@@ -9,13 +11,15 @@ import com.orm.SugarRecord;
 
 public class Notificacion extends SugarRecord {
     Alarma alarma;
+    Calendar fecha;
     boolean notificado;
 
     public Notificacion() {
     }
 
-    public Notificacion(Alarma alarma, boolean notificado) {
+    public Notificacion(Alarma alarma, Calendar fecha, boolean notificado) {
         this.alarma = alarma;
+        this.fecha = fecha;
         this.notificado = notificado;
     }
 
@@ -25,6 +29,14 @@ public class Notificacion extends SugarRecord {
 
     public void setAlarma(Alarma alarma) {
         this.alarma = alarma;
+    }
+
+    public Calendar getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Calendar fecha) {
+        this.fecha = fecha;
     }
 
     public boolean isNotificado() {
@@ -39,6 +51,7 @@ public class Notificacion extends SugarRecord {
     public String toString() {
         return "Notificacion{" +
                 "alarma=" + alarma +
+                ", fecha=" + fecha +
                 ", notificado=" + notificado +
                 '}';
     }

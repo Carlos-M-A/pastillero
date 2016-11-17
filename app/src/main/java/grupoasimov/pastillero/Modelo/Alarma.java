@@ -2,6 +2,7 @@ package grupoasimov.pastillero.Modelo;
 
 import com.orm.SugarRecord;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -10,18 +11,30 @@ import java.util.Calendar;
 
 public class Alarma extends SugarRecord{
     Medicina medicina;
-    Calendar fecha;
+    Calendar fechaInicio;
+    Calendar fechaFin;
+    Calendar horaAlarma;
+
+    boolean lunes;
+    boolean martes;
+    boolean miercoles;
+    boolean jueves;
+    boolean viernes;
+    boolean sabado;
+    boolean domingo;
+
     String nota;
-    int cantidad; // En miligramos
+    int cantidadToma; // En miligramos
 
     public Alarma() {
     }
 
-    public Alarma(Medicina medicina, Calendar fecha, String nota, int cantidad) {
+    public Alarma(Medicina medicina) {
         this.medicina = medicina;
-        this.fecha = fecha;
-        this.nota = nota;
-        this.cantidad = cantidad;
+        fechaFin = Calendar.getInstance();
+        fechaInicio = Calendar.getInstance();
+        horaAlarma = Calendar.getInstance();
+        nota = "";
     }
 
     public Medicina getMedicina() {
@@ -32,12 +45,76 @@ public class Alarma extends SugarRecord{
         this.medicina = medicina;
     }
 
-    public Calendar getFecha() {
-        return fecha;
+    public Calendar getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setFecha(Calendar fecha) {
-        this.fecha = fecha;
+    public void setFechaInicio(Calendar fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Calendar getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Calendar fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public Calendar getHoraAlarma() {
+        return horaAlarma;
+    }
+
+    public void setHoraAlarma(Calendar horaAlarma) {
+        this.horaAlarma = horaAlarma;
+    }
+
+    public boolean isLunes() {
+        return lunes;
+    }
+
+    public void setLunes(boolean lunes) {
+        this.lunes = lunes;
+    }
+
+    public boolean isMartes() {
+        return martes;
+    }
+
+    public void setMartes(boolean martes) {
+        this.martes = martes;
+    }
+
+    public boolean isMiercoles() {
+        return miercoles;
+    }
+
+    public void setMiercoles(boolean miercoles) {
+        this.miercoles = miercoles;
+    }
+
+    public boolean isJueves() {
+        return jueves;
+    }
+
+    public void setJueves(boolean jueves) {
+        this.jueves = jueves;
+    }
+
+    public boolean isViernes() {
+        return viernes;
+    }
+
+    public void setViernes(boolean viernes) {
+        this.viernes = viernes;
+    }
+
+    public boolean isSabado() {
+        return sabado;
+    }
+
+    public void setSabado(boolean sabado) {
+        this.sabado = sabado;
     }
 
     public String getNota() {
@@ -48,21 +125,38 @@ public class Alarma extends SugarRecord{
         this.nota = nota;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public boolean isDomingo() {
+        return domingo;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setDomingo(boolean domingo) {
+        this.domingo = domingo;
+    }
+
+    public int getCantidadToma() {
+        return cantidadToma;
+    }
+
+    public void setCantidadToma(int cantidadToma) {
+        this.cantidadToma = cantidadToma;
     }
 
     @Override
     public String toString() {
         return "Alarma{" +
                 "medicina=" + medicina +
-                ", fecha=" + fecha +
+                ", fechaInicio=" + fechaInicio +
+                ", fechaFin=" + fechaFin +
+                ", horaAlarma=" + horaAlarma +
+                ", lunes=" + lunes +
+                ", martes=" + martes +
+                ", miercoles=" + miercoles +
+                ", jueves=" + jueves +
+                ", viernes=" + viernes +
+                ", sabado=" + sabado +
+                ", domingo=" + domingo +
                 ", nota='" + nota + '\'' +
-                ", cantidad=" + cantidad +
+                ", cantidadToma=" + cantidadToma +
                 '}';
     }
 }
