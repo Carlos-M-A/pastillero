@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="grupoasimov.pastillero.controladores.AgregarActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_agregar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:text=""
+            android:src="@drawable/camera"
+            android:background="@drawable/boton_redondo"
+            android:layout_height="100dp"
+            android:layout_marginTop="70dp"
+            android:id="@+id/button2"
+            android:layout_marginStart="12dp"
+            android:layout_width="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="22dp"
+            android:layout_alignTop="@+id/button2"
+            android:layout_toEndOf="@+id/button2"
+            android:hint="@string/Nombre"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:hint="@string/Dosis"
+            android:layout_below="@+id/editText2"
+            android:layout_marginTop="28dp"
+            android:layout_alignEnd="@+id/editText2"
+            android:layout_alignStart="@+id/editText2" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:hint="@string/descripcion"
+            android:layout_marginTop="35dp"
+            android:selectAllOnFocus="false"
+            android:layout_below="@+id/button2"
+            android:layout_alignStart="@+id/button2"
+            android:layout_alignEnd="@+id/editText" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

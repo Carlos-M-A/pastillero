@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pappstillero</string>
+    <string name="add">Añadir</string>
+    <string name="delete">Borrar</string>
+    <string name="edit">Editar</string>
+    <string name="help">Ayuda</string>
+    <string name="title_activity_agregar">Añadir</string>
+    <string name="title_activity_ayuda">Ayuda</string>
+    <string name="Nombre">Nombre</string>
+    <string name="descripcion">Descripción</string>
+    <string name="Dosis">Dosis</string>
+</resources>
