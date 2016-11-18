@@ -126,7 +126,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     Log.d("Alarma: ", alarma.toString());
                     alarma.save();
                 }
-                Intent i = new Intent(this, MainActivity.class);
+                Intent i = new Intent(this, MainActivity2.class);
                 startActivity(i);
                 break;
         }

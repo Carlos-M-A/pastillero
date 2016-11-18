@@ -8,16 +8,18 @@ import android.widget.Button;
 
 import grupoasimov.pastillero.R;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity2 extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(this);
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setOnClickListener(this);
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 e.putExtra("idMedicina", 1);
                 startActivity(e);
                 break;
+            case R.id.button3:
+                Intent helpActivity = new Intent(this, ListarMedicinas.class);
+                startActivity(helpActivity);
+                break;
+
     }
     }
 }

@@ -3,7 +3,6 @@ package grupoasimov.pastillero.controladores;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,7 +56,7 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
                 medicina.save();
 
-                Intent i = new Intent(this, MainActivity.class);
+                Intent i = new Intent(this, MainActivity2.class);
                 startActivity(i);
                 break;
         }
