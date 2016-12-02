@@ -1,4 +1,4 @@
-package grupoasimov.pastillero.controladores;
+package grupoasimov.pastillero.utiles;
 
 import android.content.Context;
 import android.view.LayoutInflater;

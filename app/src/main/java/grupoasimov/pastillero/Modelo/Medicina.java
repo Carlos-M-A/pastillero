@@ -8,10 +8,10 @@ import com.orm.SugarRecord;
  */
 
 public class Medicina extends SugarRecord {
-    String nombre;
-    String descripcion;
-    int cantidadPorcion; // en miligramos
-    String urlImagen;
+    private String nombre;
+    private String descripcion;
+    private int cantidadPorcion; // en miligramos
+    private String urlImagen;
 
     public Medicina() {
     }

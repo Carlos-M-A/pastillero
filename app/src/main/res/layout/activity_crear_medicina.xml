@@ -31,13 +31,31 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="20dp" />
 
             <TextView
-                android:text="NOMBRE"
+                android:text="Fotografia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView6" />
+                android:id="@+id/textView9"
+                android:textAlignment="textStart" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                app:srcCompat="@android:drawable/ic_menu_camera"
+                android:id="@+id/imagenMedicina"
+                android:layout_height="100dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:text="Nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:textAlignment="textStart" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -46,35 +64,19 @@
                 android:text="Name"
                 android:ems="10"
                 android:id="@+id/nombreMedicina"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:textAlignment="center" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:layout_height="10dp" />
 
             <TextView
-                android:text="DESCRIPCION"
+                android:text="Porción de cada dosis (En mg)"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView7" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="136dp"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/descripcionMedicina"
-                android:text="Descripcion" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:text="Porción de cada pastilla en miligramos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView8" />
+                android:id="@+id/textView8"
+                android:textAlignment="viewStart" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -83,27 +85,32 @@
                 android:ems="10"
                 android:id="@+id/porcionMedicina"
                 android:text="89"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:textAlignment="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:text="Descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView7"
+                android:textAlignment="viewStart" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/descripcionMedicina"
+                android:text="Descripcion"
+                android:layout_height="98dp"
+                android:textAlignment="center" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
-
-            <TextView
-                android:text="Fotografia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView9" />
-
-            <ImageButton
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                app:srcCompat="@android:drawable/ic_menu_camera"
-                android:id="@+id/imagenMedicina" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
 
             <Button
                 android:text="GUARDAR MEDICINA"

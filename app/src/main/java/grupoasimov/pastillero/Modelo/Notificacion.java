@@ -10,17 +10,17 @@ import java.util.Calendar;
  */
 
 public class Notificacion extends SugarRecord {
-    Alarma alarma;
-    Calendar fecha;
-    boolean notificado;
+    private Alarma alarma;
+    private Calendar fecha;
+    private boolean notificado;
 
     public Notificacion() {
     }
 
-    public Notificacion(Alarma alarma, Calendar fecha, boolean notificado) {
+    public Notificacion(Alarma alarma, Calendar fecha) {
         this.alarma = alarma;
         this.fecha = fecha;
-        this.notificado = notificado;
+        this.notificado = false;
     }
 
     public Alarma getAlarma() {

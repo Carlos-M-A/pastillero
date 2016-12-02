@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mostrar_medicina"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="grupoasimov.pastillero.controladores.MostrarMedicina">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lista_mostrar_medicina"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                app:srcCompat="@mipmap/pastilla"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/imagenMedicinaM"
+                android:layout_alignParentEnd="true"
+                android:layout_height="112dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:text="NOMBRE MEDICINA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:id="@+id/nombreMedicinaM"
+                    android:textStyle="normal|bold"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/imagenMedicinaM"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:text="PORCION"
+                    android:layout_width="match_parent"
+                    android:id="@+id/porcionMedicinaM"
+                    android:textSize="18sp"
+                    android:layout_below="@+id/nombreMedicinaM"
+                    android:layout_alignParentStart="true"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:text="Descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/descripcionMedicinaM"
+            android:minHeight="20dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:text="ALARMAS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/alarmaMedicinaM"
+            android:textSize="24sp"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lista_alarmas"
+            android:scrollbars="none" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PAppstillero</string>
+    <string name="app_name">Cluster09</string>
     <string name="help">Ayuda</string>
     <string name="add">Añadir</string>
     <string name="edit">Editar</string>
@@ -54,4 +54,8 @@ Me morí.\r\n\r	</string>
     <string name="descripcion">Descripción</string>
     <string name="Dosis">Dosis</string>
     <string name="title_activity_borrar">Borrar</string>
+    <string name="addAlarma">Añadir Alarma</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

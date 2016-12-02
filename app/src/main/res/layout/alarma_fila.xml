@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:id="@+id/fila_de_alarma"
+        android:layout_height="50dp"
+        android:layout_margin="2dp"
+        android:padding="5dp" >
+
+        <TextView
+            android:text="HORA"
+            android:layout_width="109dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/hora_alarma"
+            android:textStyle="normal|bold"
+            android:textSize="18sp"
+            android:textAlignment="textStart" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="Dias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dias_alarma"
+                android:layout_weight="1" />
+
+            <TextView
+                android:text="Porcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/porcion_alarma"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

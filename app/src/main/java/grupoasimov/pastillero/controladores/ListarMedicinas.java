@@ -12,11 +12,18 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import grupoasimov.pastillero.Modelo.Medicina;
 import grupoasimov.pastillero.R;
+import grupoasimov.pastillero.utiles.Lista_adaptador;
+import grupoasimov.pastillero.utiles.Lista_entrada;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListarMedicinas extends AppCompatActivity {
+
+    List<Medicina> medicinas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +31,13 @@ public class ListarMedicinas extends AppCompatActivity {
         setContentView(R.layout.activity_listar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ArrayList<Lista_entrada> datos = new ArrayList<Lista_entrada>();
+        ArrayList<Lista_entrada> datos = new ArrayList<>();
 
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
-        datos.add(new Lista_entrada(R.mipmap.pastilla, "PARACETAMOL", "DOLOR DE CABEZA"));
+        medicinas = Medicina.listAll(Medicina.class);
+        for(Medicina m: medicinas){
+            datos.add(new Lista_entrada(R.mipmap.pastilla, m.getNombre(), Integer.toString(m.getCantidadPorcion())));
+        }
+
 
 
         ListView lista = (ListView) findViewById(R.id.listaEntrada);
@@ -58,6 +61,11 @@ public class ListarMedicinas extends AppCompatActivity {
             public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
                 Lista_entrada elegido = (Lista_entrada) pariente.getItemAtPosition(posicion);
 
+                Intent i = new Intent(getBaseContext(), MostrarMedicina.class);
+                long id2 = medicinas.get(posicion).getId();
+                i.putExtra("idMedicina", id2);
+                startActivity(i);
+
                 CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
                 Toast toast = Toast.makeText(ListarMedicinas.this, texto, Toast.LENGTH_LONG);
                 toast.show();
@@ -77,17 +85,26 @@ public class ListarMedicinas extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.help:
-                Intent helpActivity = new Intent(getApplicationContext(),AyudaActivity.class);
+                Intent helpActivity = new Intent(this, MostrarAyuda.class);
                 startActivity(helpActivity);
                 return true;
             case R.id.add:
-                Intent addActivity = new Intent(getApplicationContext(),AgregarActivity.class);
-                startActivity(addActivity);
+                Intent i = new Intent(this, CrearMedicina.class);
+                i.putExtra("actualizar", false);
+                startActivity(i);
                 return true;
             case R.id.edit:
 
                 return true;
             case R.id.delete:
+                return true;
+            case R.id.addOtro:
+                Intent a = new Intent(this, AgregarActivity.class);
+                startActivity(a);
+                return true;
+            case R.id.item_cuidador:
+                return true;
+            case R.id.item_paciente:
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

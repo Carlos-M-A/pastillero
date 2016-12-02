@@ -3,11 +3,9 @@ package grupoasimov.pastillero.controladores;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,8 +22,8 @@ import grupoasimov.pastillero.R;
 public class CrearAlarmas extends AppCompatActivity implements View.OnClickListener {
 
     TextView textView4;
-    DatePicker fechaInicio;
-    DatePicker fechaFin;
+    //DatePicker fechaInicio; Usar en caso de que se usen fechas
+    //DatePicker fechaFin;
     CheckBox checkBoxLunes;
     CheckBox checkBoxMartes;
     CheckBox checkBoxMiercoles;
@@ -49,8 +47,8 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
         // Inicializamos componentes de la interfaz de usuario
         textView4 = (TextView) findViewById(R.id.textView4);
-        fechaInicio = (DatePicker) findViewById(R.id.fechaInicio);
-        fechaFin = (DatePicker) findViewById(R.id.fechaFin);
+        //fechaInicio = (DatePicker) findViewById(R.id.fechaInicio);
+        //fechaFin = (DatePicker) findViewById(R.id.fechaFin);
         checkBoxLunes = (CheckBox) findViewById(R.id.checkBoxLunes);
         checkBoxMartes = (CheckBox) findViewById(R.id.checkBoxMartes);
         checkBoxMiercoles = (CheckBox) findViewById(R.id.checkBoxMiercoles);
@@ -72,7 +70,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
         guardarAlarma.setOnClickListener(this);
 
         //Insertamos nombre de la medicina
-        medicina = Medicina.findById(Medicina.class, getIntent().getIntExtra("idMedicina", 0));
+        medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
         textView4.setText(medicina.getNombre());
     }
 
@@ -85,10 +83,10 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                 horasAlarma.add(nuevaHoraAlarma);
                 break;
             case R.id.guardarAlarma:
-                Calendar fechaI = Calendar.getInstance();
+                /* Calendar fechaI = Calendar.getInstance();
                 Calendar fechaF = Calendar.getInstance();
                 fechaI.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDayOfMonth());
-                fechaF.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDayOfMonth());
+                fechaF.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDayOfMonth()); */
 
                 boolean lunes = checkBoxLunes.isChecked();
                 boolean martes = checkBoxMartes.isChecked();
@@ -102,8 +100,8 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
                 for (TimePicker hora: horasAlarma) {
                     Alarma alarma = new Alarma(medicina);
-                    alarma.setFechaInicio(fechaI);
-                    alarma.setFechaFin(fechaF);
+                    //alarma.setFechaInicio(fechaI);
+                    //alarma.setFechaFin(fechaF);
 
                     alarma.setLunes(lunes);
                     alarma.setMartes(martes);
@@ -116,17 +114,16 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     alarma.setCantidadToma(cantidadToma);
                     alarma.setNota(nota);
 
-                    Calendar horaNueva = Calendar.getInstance();
-
                     // Hay que usar estos metodos deprecated por que es necesario para que funcione
                     // para la version 19 del SDK
-                    horaNueva.set(2000, 1, 1, hora.getCurrentHour(), hora.getCurrentMinute());
-                    alarma.setHoraAlarma(horaNueva);
 
-                    Log.d("Alarma: ", alarma.toString());
+                    alarma.setHora(hora.getCurrentHour());
+                    alarma.setMinuto(hora.getCurrentMinute());
+
                     alarma.save();
                 }
-                Intent i = new Intent(this, MainActivity2.class);
+                Intent i = new Intent(this, MostrarMedicina.class);
+                i.putExtra("idMedicina", medicina.getId());
                 startActivity(i);
                 break;
         }

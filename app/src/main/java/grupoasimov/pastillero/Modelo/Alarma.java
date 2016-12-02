@@ -10,31 +10,31 @@ import java.util.Calendar;
  */
 
 public class Alarma extends SugarRecord{
-    Medicina medicina;
-    Calendar fechaInicio;
-    Calendar fechaFin;
-    Calendar horaAlarma;
 
-    boolean lunes;
-    boolean martes;
-    boolean miercoles;
-    boolean jueves;
-    boolean viernes;
-    boolean sabado;
-    boolean domingo;
+    private Medicina medicina;
 
-    String nota;
-    int cantidadToma; // En miligramos
+    private int hora;
+    private int minuto;
+
+    private int cadaXDias;
+    private boolean lunes;
+    private boolean martes;
+    private boolean miercoles;
+    private boolean jueves;
+    private boolean viernes;
+    private boolean sabado;
+    private boolean domingo;
+
+    private String nota;
+    private int cantidadToma; // En miligramos
 
     public Alarma() {
     }
 
     public Alarma(Medicina medicina) {
         this.medicina = medicina;
-        fechaFin = Calendar.getInstance();
-        fechaInicio = Calendar.getInstance();
-        horaAlarma = Calendar.getInstance();
         nota = "";
+        cadaXDias = 0;
     }
 
     public Medicina getMedicina() {
@@ -45,28 +45,28 @@ public class Alarma extends SugarRecord{
         this.medicina = medicina;
     }
 
-    public Calendar getFechaInicio() {
-        return fechaInicio;
+    public int getHora() {
+        return hora;
     }
 
-    public void setFechaInicio(Calendar fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setHora(int hora) {
+        this.hora = hora;
     }
 
-    public Calendar getFechaFin() {
-        return fechaFin;
+    public int getMinuto() {
+        return minuto;
     }
 
-    public void setFechaFin(Calendar fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setMinuto(int minuto) {
+        this.minuto = minuto;
     }
 
-    public Calendar getHoraAlarma() {
-        return horaAlarma;
+    public int getCadaXDias() {
+        return cadaXDias;
     }
 
-    public void setHoraAlarma(Calendar horaAlarma) {
-        this.horaAlarma = horaAlarma;
+    public void setCadaXDias(int cadaXDias) {
+        this.cadaXDias = cadaXDias;
     }
 
     public boolean isLunes() {
@@ -145,9 +145,9 @@ public class Alarma extends SugarRecord{
     public String toString() {
         return "Alarma{" +
                 "medicina=" + medicina +
-                ", fechaInicio=" + fechaInicio +
-                ", fechaFin=" + fechaFin +
-                ", horaAlarma=" + horaAlarma +
+                ", hora=" + hora +
+                ", minuto=" + minuto +
+                ", cadaXDias=" + cadaXDias +
                 ", lunes=" + lunes +
                 ", martes=" + martes +
                 ", miercoles=" + miercoles +
@@ -158,5 +158,51 @@ public class Alarma extends SugarRecord{
                 ", nota='" + nota + '\'' +
                 ", cantidadToma=" + cantidadToma +
                 '}';
+    }
+
+    public String getStringHora(){
+        String horaString = "";
+        horaString = horaString + Integer.toString(hora) + ":";
+        if (minuto<10)
+            horaString = horaString + "0";
+        horaString = horaString + Integer.toString(minuto);
+        return horaString;
+    }
+
+    public String getStringDiasCorto(){
+        String cadenaDias = "";
+        if(cadaXDias==0) {
+            if (isLunes()) cadenaDias = cadenaDias + " Lu";
+            if (isMartes()) cadenaDias = cadenaDias + " Ma";
+            if (isMiercoles()) cadenaDias = cadenaDias + " Mi";
+            if (isJueves()) cadenaDias = cadenaDias + " Ju";
+            if (isViernes()) cadenaDias = cadenaDias + " Vi";
+            if (isSabado()) cadenaDias = cadenaDias + " Sa";
+            if (isDomingo()) cadenaDias = cadenaDias + " Do";
+        } else{
+            cadenaDias = "Cada " + Integer.toString(cadaXDias) + " dias";
+        }
+        return cadenaDias;
+    }
+
+    public String getStringDiasLargo(){
+        String cadenaDias = "";
+        if(cadaXDias==0) {
+            if (isLunes()) cadenaDias = cadenaDias + "Lunes";
+            if (isMartes()) cadenaDias = cadenaDias + " Martes";
+            if (isMiercoles()) cadenaDias = cadenaDias + " Miercoles";
+            if (isJueves()) cadenaDias = cadenaDias + " Jueves";
+            if (isViernes()) cadenaDias = cadenaDias + " Viernes";
+            if (isSabado()) cadenaDias = cadenaDias + " Sabado";
+            if (isDomingo()) cadenaDias = cadenaDias + " Domingo";
+        } else{
+            cadenaDias = "Cada " + Integer.toString(cadaXDias) + " dias";
+        }
+        return cadenaDias;
+    }
+
+    public String getStringPorcion(){
+        String cadenaPorcion = Integer.toString(cantidadToma) + " mg";
+        return cadenaPorcion;
     }
 }

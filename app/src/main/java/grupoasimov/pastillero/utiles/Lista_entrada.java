@@ -1,4 +1,4 @@
-package grupoasimov.pastillero.controladores;
+package grupoasimov.pastillero.utiles;
 
 /**
  * Created by ESTIMADO USUARIO on 11/11/2016.

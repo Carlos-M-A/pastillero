@@ -35,7 +35,7 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         guardarMedicina.setOnClickListener(this);
 
         if(getIntent().getBooleanExtra("actualizar", true)==true){
-            medicina = Medicina.findById(Medicina.class, getIntent().getIntExtra("idMedicina", 0));
+            medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
             nombreMedicina.setText(medicina.getNombre());
             descripcionMedicina .setText(medicina.getDescripcion());
             porcionMedicina.setText(String.valueOf(medicina.getCantidadPorcion()));
@@ -56,7 +56,8 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
                 medicina.save();
 
-                Intent i = new Intent(this, MainActivity2.class);
+
+                Intent i = new Intent(this, ListarMedicinas.class);
                 startActivity(i);
                 break;
         }
