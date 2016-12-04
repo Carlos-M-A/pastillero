@@ -28,6 +28,8 @@ public class MostrarAlarma extends AppCompatActivity {
         long id = getIntent().getLongExtra("idAlarma", 0);
         alarma = Alarma.findById(Alarma.class, id);
 
+
+
         nombreMedicinaA = (TextView) findViewById(R.id.nombreMedicinaA);
         horaAlarmaA = (TextView) findViewById(R.id.horaAlarmaA);
         diasAlarmaA = (TextView) findViewById(R.id.diasAlarmaA);
@@ -56,6 +58,7 @@ public class MostrarAlarma extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), MostrarMedicina.class);
                 i.putExtra("idMedicina", id);
                 alarma.delete();
+                finish();
                 startActivity(i);
                 return true;
             case R.id.menu_alarma_2:

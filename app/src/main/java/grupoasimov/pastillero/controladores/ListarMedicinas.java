@@ -89,6 +89,7 @@ public class ListarMedicinas extends AppCompatActivity {
                 startActivity(helpActivity);
                 return true;
             case R.id.add:
+                finish();
                 Intent i = new Intent(this, CrearMedicina.class);
                 i.putExtra("actualizar", false);
                 startActivity(i);

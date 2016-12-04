@@ -35,7 +35,8 @@
                 android:inputType="textPersonName"
                 android:text="Nombre"
                 android:ems="10"
-                android:id="@+id/cpc_nombre_paciente" />
+                android:id="@+id/cpc_nombre_paciente"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -43,7 +44,8 @@
                 android:inputType="textPersonName"
                 android:text="Apellidos"
                 android:ems="10"
-                android:id="@+id/cpc_apellidos_paciente" />
+                android:id="@+id/cpc_apellidos_paciente"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -51,15 +53,17 @@
                 android:inputType="textPersonName"
                 android:text="Direccion"
                 android:ems="10"
-                android:id="@+id/cpc_direccion_paciente" />
+                android:id="@+id/cpc_direccion_paciente"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:text="Telefono"
                 android:ems="10"
-                android:id="@+id/cpc_telefono_paciente" />
+                android:id="@+id/cpc_telefono_paciente"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -67,7 +71,8 @@
                 android:inputType="textPersonName"
                 android:text="Email"
                 android:ems="10"
-                android:id="@+id/cpc_email_paciente" />
+                android:id="@+id/cpc_email_paciente"
+                android:selectAllOnFocus="true" />
 
             <Space
                 android:layout_width="match_parent"
@@ -88,7 +93,8 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/cpc_nombre_cuidador"
-                android:text="Nombre" />
+                android:text="Nombre"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -96,7 +102,8 @@
                 android:inputType="textPersonName"
                 android:text="Apellidos"
                 android:ems="10"
-                android:id="@+id/cpc_apellidos_cuidador" />
+                android:id="@+id/cpc_apellidos_cuidador"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -104,15 +111,17 @@
                 android:inputType="textPersonName"
                 android:text="Direccion"
                 android:ems="10"
-                android:id="@+id/cpc_direccion_cuidador" />
+                android:id="@+id/cpc_direccion_cuidador"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
                 android:text="Telefono"
                 android:ems="10"
-                android:id="@+id/cpc_telefono_cuidador" />
+                android:id="@+id/cpc_telefono_cuidador"
+                android:inputType="phone"
+                android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -120,7 +129,8 @@
                 android:inputType="textPersonName"
                 android:text="Email"
                 android:ems="10"
-                android:id="@+id/cpc_email_cuidador" />
+                android:id="@+id/cpc_email_cuidador"
+                android:selectAllOnFocus="true" />
 
             <Space
                 android:layout_width="match_parent"

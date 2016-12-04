@@ -51,6 +51,8 @@ public class CrearPacienteCuidador extends AppCompatActivity implements View.OnC
 
         if(Paciente.listAll(Paciente.class).size()==0) {
             Log.d("PACIENTE-CUIDADOR", "HNo hay pacientes");
+            paciente = new Paciente();
+            cuidador = new Cuidador();
         } else {
             paciente = Paciente.listAll(Paciente.class).get(0);
             cuidador = Cuidador.listAll(Cuidador.class).get(0);
@@ -87,6 +89,7 @@ public class CrearPacienteCuidador extends AppCompatActivity implements View.OnC
         paciente.save();
         cuidador.save();
 
+        finish();;
         Intent i = new Intent(this, MostrarPacienteCuidador.class);
         startActivity(i);
     }

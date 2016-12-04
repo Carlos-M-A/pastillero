@@ -56,8 +56,10 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
                 medicina.save();
 
-
-                Intent i = new Intent(this, ListarMedicinas.class);
+                finish();
+                Intent i = new Intent(getBaseContext(), MostrarMedicina.class);
+                long id2 = medicina.getId();
+                i.putExtra("idMedicina", id2);
                 startActivity(i);
                 break;
         }

@@ -77,12 +77,15 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
                 startActivity(helpActivity);
                 return true;
             case R.id.addAlarma:
+                finish();
+
                 Intent e = new Intent(this, CrearAlarmas.class);
                 long id = medicina.getId();
                 e.putExtra("idMedicina", id);
                 startActivity(e);
                 return true;
             case R.id.editMedicina:
+                finish();
                 Intent i = new Intent(this, CrearMedicina.class);
                 long id2 = medicina.getId();
                 i.putExtra("actualizar", true);
@@ -91,6 +94,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
 
                 return true;
             case R.id.deleteMedicina:
+                finish();
                 medicina.delete();
                 Intent i2 = new Intent(this, ListarMedicinas.class);
                 startActivity(i2);
@@ -131,6 +135,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
         Alarma alarma = alarmas.get(position);
         Intent i = new Intent(this, MostrarAlarma.class);
         i.putExtra("idAlarma", alarma.getId());
