@@ -11,7 +11,7 @@ public class Cuidador extends SugarRecord {
     private String nombre;
     private String apellidos;
     private String direccion;
-    private String numeroDeTelefono;
+    private String telefono;
     private String email;
 
     public Cuidador() {
@@ -42,12 +42,12 @@ public class Cuidador extends SugarRecord {
         this.direccion = direccion;
     }
 
-    public String getNumeroDeTelefono() {
-        return numeroDeTelefono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setNumeroDeTelefono(String numeroDeTelefono) {
-        this.numeroDeTelefono = numeroDeTelefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getEmail() {

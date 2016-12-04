@@ -10,9 +10,8 @@ public class Paciente extends SugarRecord {
 
     private String nombre;
     private String apellidos;
-    private int edad;
     private String direccion;
-    private String numeroDeTelefono;
+    private String telefono;
     private String email;
 
     public Paciente(){
@@ -39,13 +38,6 @@ public class Paciente extends SugarRecord {
         this.apellidos = apellidos;
     }
 
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
 
     public String getDireccion() {
         return direccion;
@@ -55,12 +47,12 @@ public class Paciente extends SugarRecord {
         this.direccion = direccion;
     }
 
-    public String getNumeroDeTelefono() {
-        return numeroDeTelefono;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setNumeroDeTelefono(String numeroDeTelefono) {
-        this.numeroDeTelefono = numeroDeTelefono;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getEmail() {

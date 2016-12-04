@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Editar datos"
+        android:id="@+id/menu_paciente_cuidador_editar" />
+    <item android:title="Borrar"
+        android:id="@+id/menu_paciente_cuidador_borrar" />
+    <item android:title="Ayuda"
+        android:id="@+id/menu_paciente_cuidador_ayuda" />
+</menu>

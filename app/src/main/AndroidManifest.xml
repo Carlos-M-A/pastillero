@@ -61,7 +61,9 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".controladores.MostrarAlarma"></activity>
+        <activity android:name=".controladores.MostrarAlarma" />
+        <activity android:name=".controladores.CrearPacienteCuidador" />
+        <activity android:name=".controladores.MostrarPacienteCuidador"></activity>
     </application>
 
 </manifest>

@@ -3,8 +3,6 @@ package grupoasimov.pastillero.controladores;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -67,7 +65,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.mcmenu_medicina, menu);
+        getMenuInflater().inflate(R.menu.menu_medicina, menu);
         return true;
     }
 

@@ -93,18 +93,15 @@ public class ListarMedicinas extends AppCompatActivity {
                 i.putExtra("actualizar", false);
                 startActivity(i);
                 return true;
-            case R.id.edit:
 
-                return true;
-            case R.id.delete:
-                return true;
+
             case R.id.addOtro:
                 Intent a = new Intent(this, AgregarActivity.class);
                 startActivity(a);
                 return true;
-            case R.id.item_cuidador:
-                return true;
-            case R.id.item_paciente:
+            case R.id.item_paciente_cuidador:
+                Intent e = new Intent(this, MostrarPacienteCuidador.class);
+                startActivity(e);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
