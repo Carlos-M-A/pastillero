@@ -122,9 +122,6 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     alarma.save();
                 }
                 finish();
-                Intent i = new Intent(this, MostrarMedicina.class);
-                i.putExtra("idMedicina", medicina.getId());
-                startActivity(i);
                 break;
         }
 

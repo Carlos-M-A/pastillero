@@ -8,71 +8,44 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import grupoasimov.pastillero.Modelo.Medicina;
 import grupoasimov.pastillero.R;
-import grupoasimov.pastillero.utiles.ListaMedicinasAdaptador;
-import grupoasimov.pastillero.utiles.Lista_entrada;
+import grupoasimov.pastillero.utiles.ListaMedicinaAdaptador;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ListarMedicinas extends AppCompatActivity {
+public class ListarMedicinas extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     List<Medicina> medicinas;
+    ListView listaMedicinas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        listaMedicinas = (ListView) findViewById(R.id.listaEntrada);
+
         setSupportActionBar(toolbar);
-        ArrayList<Lista_entrada> datos = new ArrayList<>();
 
         medicinas = Medicina.listAll(Medicina.class);
-        for(Medicina m: medicinas){
-            datos.add(new Lista_entrada(R.mipmap.pastilla, m.getNombre(), Integer.toString(m.getCantidadPorcion())));
-        }
+        ListaMedicinaAdaptador listaMedicinaAdaptador = new ListaMedicinaAdaptador(this, medicinas);
 
-
-
-        ListView lista = (ListView) findViewById(R.id.listaEntrada);
-        lista.setAdapter(new ListaMedicinasAdaptador(this, R.layout.list_row, datos) {
-            @Override
-            public void onEntrada(Object entrada, View view) {
-                TextView texto_superior_entrada = (TextView) view.findViewById(R.id.texto_superior);
-                texto_superior_entrada.setText(((Lista_entrada) entrada).get_textoEncima());
-
-                TextView texto_inferior_entrada = (TextView) view.findViewById(R.id.texto_inferior);
-                texto_inferior_entrada.setText(((Lista_entrada) entrada).get_textoDebajo());
-
-                ImageView imagen_entrada = (ImageView) view.findViewById(R.id.imagen_single_post_circuito);
-                imagen_entrada.setImageResource(((Lista_entrada) entrada).get_idImagen());
-
-
-            }
-        });
-        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id) {
-                Lista_entrada elegido = (Lista_entrada) pariente.getItemAtPosition(posicion);
-
-                Intent i = new Intent(getBaseContext(), MostrarMedicina.class);
-                long id2 = medicinas.get(posicion).getId();
-                i.putExtra("idMedicina", id2);
-                startActivity(i);
-
-                CharSequence texto = "Seleccionado: " + elegido.get_textoDebajo();
-                Toast toast = Toast.makeText(ListarMedicinas.this, texto, Toast.LENGTH_LONG);
-                toast.show();
-            }
-        });
+        listaMedicinas.setAdapter(listaMedicinaAdaptador);
+        listaMedicinas.setOnItemClickListener(this);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        medicinas = Medicina.listAll(Medicina.class);
+        ListaMedicinaAdaptador listaMedicinaAdaptador = new ListaMedicinaAdaptador(this, medicinas);
+
+        listaMedicinas.setAdapter(listaMedicinaAdaptador);
+        listaMedicinas.setOnItemClickListener(this);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,13 +62,10 @@ public class ListarMedicinas extends AppCompatActivity {
                 startActivity(helpActivity);
                 return true;
             case R.id.menu_listar_medicina_nueva_medicina:
-                finish();
                 Intent i = new Intent(this, CrearMedicina.class);
                 i.putExtra("actualizar", false);
                 startActivity(i);
                 return true;
-
-
             case R.id.menu_listar_medicina_nuevo_otro:
                 Intent a = new Intent(this, AgregarActivity.class);
                 startActivity(a);
@@ -108,5 +78,14 @@ public class ListarMedicinas extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
 
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Medicina medicina = medicinas.get(position);
+        Intent i = new Intent(this, MostrarMedicina.class);
+        long id2 = medicina.getId();
+        i.putExtra("idMedicina", id2);
+        startActivity(i);
     }
 }

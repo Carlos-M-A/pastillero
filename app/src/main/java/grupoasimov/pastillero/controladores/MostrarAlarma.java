@@ -17,7 +17,7 @@ public class MostrarAlarma extends AppCompatActivity {
 
     TextView nombreMedicinaA;
     TextView horaAlarmaA;
-    TextView diasAlarmaA ;
+    TextView diasAlarmaA;
     TextView porcionAlarmaA;
     TextView notaAlarmaA;
 
@@ -27,7 +27,6 @@ public class MostrarAlarma extends AppCompatActivity {
         setContentView(R.layout.activity_mostrar_alarma);
         long id = getIntent().getLongExtra("idAlarma", 0);
         alarma = Alarma.findById(Alarma.class, id);
-
 
 
         nombreMedicinaA = (TextView) findViewById(R.id.ma_nombre_medicina);
@@ -53,18 +52,17 @@ public class MostrarAlarma extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+
             case R.id.menu_alarma_borrar:
-                long id = alarma.getMedicina().getId();
-                Intent i = new Intent(getApplicationContext(), MostrarMedicina.class);
-                i.putExtra("idMedicina", id);
                 alarma.delete();
                 finish();
-                startActivity(i);
                 return true;
+
             case R.id.menu_alarma_ayuda:
                 Intent helpActivity = new Intent(this, MostrarAyuda.class);
                 startActivity(helpActivity);
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }

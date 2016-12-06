@@ -48,19 +48,15 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+
             case R.id.cm_guardar:
                 medicina.setNombre(nombreMedicina.getText().toString());
                 medicina.setDescripcion(descripcionMedicina.getText().toString());
                 medicina.setCantidadPorcion(Integer.parseInt(porcionMedicina.getText().toString()));
                 medicina.setUrlImagen("url");
-
                 medicina.save();
 
                 finish();
-                Intent i = new Intent(getBaseContext(), MostrarMedicina.class);
-                long id2 = medicina.getId();
-                i.putExtra("idMedicina", id2);
-                startActivity(i);
                 break;
         }
     }
