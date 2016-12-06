@@ -13,7 +13,6 @@ import android.widget.TimePicker;
 
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import grupoasimov.pastillero.Modelo.Alarma;
 import grupoasimov.pastillero.Modelo.Medicina;
@@ -21,7 +20,7 @@ import grupoasimov.pastillero.R;
 
 public class CrearAlarmas extends AppCompatActivity implements View.OnClickListener {
 
-    TextView textView4;
+    TextView nombreMedicina;
     //DatePicker fechaInicio; Usar en caso de que se usen fechas
     //DatePicker fechaFin;
     CheckBox checkBoxLunes;
@@ -46,23 +45,23 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_crear_alarmas);
 
         // Inicializamos componentes de la interfaz de usuario
-        textView4 = (TextView) findViewById(R.id.textView4);
+        nombreMedicina = (TextView) findViewById(R.id.ca_nombre_medicina);
         //fechaInicio = (DatePicker) findViewById(R.id.fechaInicio);
         //fechaFin = (DatePicker) findViewById(R.id.fechaFin);
-        checkBoxLunes = (CheckBox) findViewById(R.id.checkBoxLunes);
-        checkBoxMartes = (CheckBox) findViewById(R.id.checkBoxMartes);
-        checkBoxMiercoles = (CheckBox) findViewById(R.id.checkBoxMiercoles);
-        checkBoxJueves = (CheckBox) findViewById(R.id.checkBoxJueves);
-        checkBoxViernes = (CheckBox) findViewById(R.id.checkBoxViernes);
-        checkBoxSabado = (CheckBox) findViewById(R.id.checkBoxSabado);
-        checkBoxDomingo = (CheckBox) findViewById(R.id.checkBoxDomingo);
+        checkBoxLunes = (CheckBox) findViewById(R.id.ca_lunes);
+        checkBoxMartes = (CheckBox) findViewById(R.id.ca_martes);
+        checkBoxMiercoles = (CheckBox) findViewById(R.id.ca_miercoles);
+        checkBoxJueves = (CheckBox) findViewById(R.id.ca_jueves);
+        checkBoxViernes = (CheckBox) findViewById(R.id.ca_viernes);
+        checkBoxSabado = (CheckBox) findViewById(R.id.ca_sabado);
+        checkBoxDomingo = (CheckBox) findViewById(R.id.ca_domingo);
         horasAlarma = new ArrayList<TimePicker>();
-        listaHorasAlarma = (LinearLayout) findViewById(R.id.listaHorasAlarma) ;
-        horasAlarma.add((TimePicker)findViewById(R.id.horaAlarma));
-        nuevaHora = (Button) findViewById(R.id.nuevaHora);
-        porcionAlarma = (EditText) findViewById(R.id.porcionAlarma);
-        notaAlarma = (EditText) findViewById(R.id.notaAlarma);
-        guardarAlarma = (Button) findViewById(R.id.guardarAlarma);
+        listaHorasAlarma = (LinearLayout) findViewById(R.id.ca_lista_horas) ;
+        horasAlarma.add((TimePicker)findViewById(R.id.ca_hora));
+        nuevaHora = (Button) findViewById(R.id.ca_nueva_hora);
+        porcionAlarma = (EditText) findViewById(R.id.ca_porcion);
+        notaAlarma = (EditText) findViewById(R.id.ca_nota);
+        guardarAlarma = (Button) findViewById(R.id.ca_guardar);
 
 
         // Declaramos los listener
@@ -71,18 +70,18 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
         //Insertamos nombre de la medicina
         medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
-        textView4.setText(medicina.getNombre());
+        nombreMedicina.setText(medicina.getNombre());
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.nuevaHora:
+            case R.id.ca_nueva_hora:
                 TimePicker nuevaHoraAlarma = new TimePicker(this);
                 listaHorasAlarma.addView(nuevaHoraAlarma, horasAlarma.size());
                 horasAlarma.add(nuevaHoraAlarma);
                 break;
-            case R.id.guardarAlarma:
+            case R.id.ca_guardar:
                 /* Calendar fechaI = Calendar.getInstance();
                 Calendar fechaF = Calendar.getInstance();
                 fechaI.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDayOfMonth());
@@ -114,8 +113,8 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     alarma.setCantidadToma(cantidadToma);
                     alarma.setNota(nota);
 
-                    // Hay que usar estos metodos deprecated por que es necesario para que funcione
-                    // para la version 19 del SDK
+                    // Hay que usar estos metodos deprecated por que son necesarios para que funcione
+                    // para la version 17 del SDK
 
                     alarma.setHora(hora.getCurrentHour());
                     alarma.setMinuto(hora.getCurrentMinute());

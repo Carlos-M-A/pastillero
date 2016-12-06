@@ -43,7 +43,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 app:srcCompat="@android:drawable/ic_menu_camera"
-                android:id="@+id/imagenMedicina"
+                android:id="@+id/cm_imagen"
                 android:layout_height="100dp" />
 
             <Space
@@ -63,7 +63,7 @@
                 android:inputType="textPersonName"
                 android:text="Name"
                 android:ems="10"
-                android:id="@+id/nombreMedicina"
+                android:id="@+id/cm_nombre"
                 android:selectAllOnFocus="true"
                 android:textAlignment="center" />
 
@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/porcionMedicina"
+                android:id="@+id/cm_porcion"
                 android:text="89"
                 android:selectAllOnFocus="true"
                 android:textAlignment="center" />
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/descripcionMedicina"
+                android:id="@+id/cm_descripcion"
                 android:text="Descripcion"
                 android:layout_height="98dp"
                 android:textAlignment="center" />
@@ -116,7 +116,7 @@
                 android:text="GUARDAR MEDICINA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/guardarMedicina" />
+                android:id="@+id/cm_guardar" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

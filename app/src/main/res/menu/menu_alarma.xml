@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Borrar"
-        android:id="@+id/menu_alarma_1" />
+        android:id="@+id/menu_alarma_borrar" />
     <item android:title="ayuda"
-        android:id="@+id/menu_alarma_2" />
+        android:id="@+id/menu_alarma_ayuda" />
 </menu>

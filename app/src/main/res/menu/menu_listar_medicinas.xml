@@ -3,17 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="grupoasimov.pastillero.controladores.ListarMedicinas">
     <item android:title="Paciente-Cuidador"
-        android:id="@+id/item_paciente_cuidador" />
-    <item android:id="@+id/help"
+        android:id="@+id/menu_listar_medicina_paciente_cuidador" />
+    <item android:id="@+id/menu_listar_medicina_ayuda"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/help"
         android:orderInCategory="1"
         android:showAsAction="never"/>
-    <item android:id="@+id/add"
+    <item android:id="@+id/menu_listar_medicina_nueva_medicina"
         android:icon="@android:drawable/ic_menu_add"
         android:title="@string/add"
         android:orderInCategory="2"
         android:showAsAction="never"/>
     <item android:title="añadir otro"
-        android:id="@+id/addOtro" />
+        android:id="@+id/menu_listar_medicina_nuevo_otro" />
 </menu>

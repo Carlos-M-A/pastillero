@@ -13,13 +13,13 @@ import java.util.ArrayList;
  * Created by ESTIMADO USUARIO on 11/11/2016.
  */
 
-public abstract class Lista_adaptador extends BaseAdapter {
+public abstract class ListaMedicinasAdaptador extends BaseAdapter {
 
     private ArrayList<?> entradas;
     private int R_layout_IdView;
     private Context contexto;
 
-    public Lista_adaptador(Context contexto, int R_layout_IdView, ArrayList<?> entradas) {
+    public ListaMedicinasAdaptador(Context contexto, int R_layout_IdView, ArrayList<?> entradas) {
         super();
         this.contexto = contexto;
         this.entradas = entradas;

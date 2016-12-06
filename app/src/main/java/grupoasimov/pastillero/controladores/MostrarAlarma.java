@@ -30,11 +30,11 @@ public class MostrarAlarma extends AppCompatActivity {
 
 
 
-        nombreMedicinaA = (TextView) findViewById(R.id.nombreMedicinaA);
-        horaAlarmaA = (TextView) findViewById(R.id.horaAlarmaA);
-        diasAlarmaA = (TextView) findViewById(R.id.diasAlarmaA);
-        porcionAlarmaA = (TextView) findViewById(R.id.porcionAlarmaA);
-        notaAlarmaA = (TextView) findViewById(R.id.notaAlarmaA);
+        nombreMedicinaA = (TextView) findViewById(R.id.ma_nombre_medicina);
+        horaAlarmaA = (TextView) findViewById(R.id.ma_hora);
+        diasAlarmaA = (TextView) findViewById(R.id.ma_dias);
+        porcionAlarmaA = (TextView) findViewById(R.id.ma_porcion);
+        notaAlarmaA = (TextView) findViewById(R.id.ma_nota);
 
         nombreMedicinaA.setText(alarma.getMedicina().getNombre());
         horaAlarmaA.setText(alarma.getStringHora());
@@ -53,7 +53,7 @@ public class MostrarAlarma extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_alarma_1:
+            case R.id.menu_alarma_borrar:
                 long id = alarma.getMedicina().getId();
                 Intent i = new Intent(getApplicationContext(), MostrarMedicina.class);
                 i.putExtra("idMedicina", id);
@@ -61,7 +61,7 @@ public class MostrarAlarma extends AppCompatActivity {
                 finish();
                 startActivity(i);
                 return true;
-            case R.id.menu_alarma_2:
+            case R.id.menu_alarma_ayuda:
                 Intent helpActivity = new Intent(this, MostrarAyuda.class);
                 startActivity(helpActivity);
                 return true;

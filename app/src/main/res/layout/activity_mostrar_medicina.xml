@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:id="@+id/lista_mostrar_medicina"
+        android:id="@+id/mm_lista"
         android:weightSum="1">
 
         <LinearLayout
@@ -28,7 +28,7 @@
                 app:srcCompat="@mipmap/pastilla"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:id="@+id/imagenMedicinaM"
+                android:id="@+id/mm_imagen"
                 android:layout_alignParentEnd="true"
                 android:layout_height="112dp"
                 android:layout_weight="1" />
@@ -44,18 +44,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="17dp"
-                    android:id="@+id/nombreMedicinaM"
+                    android:id="@+id/mm_nombre"
                     android:textStyle="normal|bold"
                     android:textSize="18sp"
-                    android:layout_below="@+id/imagenMedicinaM"
+                    android:layout_below="@+id/mm_imagen"
                     android:layout_alignParentStart="true" />
 
                 <TextView
                     android:text="PORCION"
                     android:layout_width="match_parent"
-                    android:id="@+id/porcionMedicinaM"
+                    android:id="@+id/mm_porcion"
                     android:textSize="18sp"
-                    android:layout_below="@+id/nombreMedicinaM"
+                    android:layout_below="@+id/mm_nombre"
                     android:layout_alignParentStart="true"
                     android:layout_height="wrap_content" />
 
@@ -70,7 +70,7 @@
             android:text="Descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/descripcionMedicinaM"
+            android:id="@+id/mm_descripcion"
             android:minHeight="20dp" />
 
         <Space
@@ -81,14 +81,14 @@
             android:text="ALARMAS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/alarmaMedicinaM"
+            android:id="@+id/mm_texto_alarmas"
             android:textSize="24sp"
             android:textColor="@android:color/holo_red_dark" />
 
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/lista_alarmas"
+            android:id="@+id/mm_lista_alarmas"
             android:scrollbars="none" />
 
     </LinearLayout>

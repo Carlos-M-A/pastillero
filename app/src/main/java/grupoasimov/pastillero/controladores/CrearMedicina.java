@@ -26,11 +26,11 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_medicina);
 
-        nombreMedicina = (EditText) findViewById(R.id.nombreMedicina);
-        descripcionMedicina = (EditText) findViewById(R.id.descripcionMedicina);
-        porcionMedicina = (EditText) findViewById(R.id.porcionMedicina);
-        imagenMedicina = (ImageButton) findViewById(R.id.imagenMedicina);
-        guardarMedicina = (Button) findViewById(R.id.guardarMedicina);
+        nombreMedicina = (EditText) findViewById(R.id.cm_nombre);
+        descripcionMedicina = (EditText) findViewById(R.id.cm_descripcion);
+        porcionMedicina = (EditText) findViewById(R.id.cm_porcion);
+        imagenMedicina = (ImageButton) findViewById(R.id.cm_imagen);
+        guardarMedicina = (Button) findViewById(R.id.cm_guardar);
 
         guardarMedicina.setOnClickListener(this);
 
@@ -48,7 +48,7 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.guardarMedicina:
+            case R.id.cm_guardar:
                 medicina.setNombre(nombreMedicina.getText().toString());
                 medicina.setDescripcion(descripcionMedicina.getText().toString());
                 medicina.setCantidadPorcion(Integer.parseInt(porcionMedicina.getText().toString()));

@@ -25,7 +25,7 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/nombreMedicinaA"
+                android:id="@+id/ma_nombre_medicina"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -37,7 +37,7 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/horaAlarmaA"
+                android:id="@+id/ma_hora"
                 android:textAlignment="center"
                 android:textSize="30sp"
                 android:textStyle="normal|bold"
@@ -47,7 +47,7 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/diasAlarmaA"
+                android:id="@+id/ma_dias"
                 android:textSize="18sp"
                 android:textColor="@android:color/holo_red_light"
                 android:textAlignment="center" />
@@ -60,7 +60,7 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/porcionAlarmaA"
+                android:id="@+id/ma_porcion"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
@@ -72,7 +72,7 @@
                 android:text="TextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/notaAlarmaA"
+                android:id="@+id/ma_nota"
                 android:textSize="18sp"
                 android:textAlignment="center" />
         </LinearLayout>

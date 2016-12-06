@@ -36,16 +36,16 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         //Insertamos nombre de la medicina
         medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
 
-        TextView nombre = (TextView) findViewById(R.id.nombreMedicinaM);
-        TextView porcion = (TextView) findViewById(R.id.porcionMedicinaM);
-        descripcion = (TextView) findViewById(R.id.descripcionMedicinaM);
+        TextView nombre = (TextView) findViewById(R.id.mm_nombre);
+        TextView porcion = (TextView) findViewById(R.id.mm_porcion);
+        descripcion = (TextView) findViewById(R.id.mm_descripcion);
         descripcion.setOnClickListener(this);
-        alarmasEtiqueta = (TextView) findViewById(R.id.alarmaMedicinaM);
+        alarmasEtiqueta = (TextView) findViewById(R.id.mm_texto_alarmas);
         alarmasEtiqueta.setOnClickListener(this);
         alarmasEtiqueta.setOnTouchListener(this);
 
 
-        listaAlarmas = (ListView) findViewById(R.id.lista_alarmas) ;
+        listaAlarmas = (ListView) findViewById(R.id.mm_lista_alarmas) ;
 
         nombre.setText(medicina.getNombre());
         porcion.setText(Integer.toString(medicina.getCantidadPorcion()) + " mg");
@@ -72,11 +72,11 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.helpMedicina:
+            case R.id.menu_medicina_ayuda:
                 Intent helpActivity = new Intent(this, MostrarAyuda.class);
                 startActivity(helpActivity);
                 return true;
-            case R.id.addAlarma:
+            case R.id.menu_medicina_nueva_alarma:
                 finish();
 
                 Intent e = new Intent(this, CrearAlarmas.class);
@@ -84,7 +84,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
                 e.putExtra("idMedicina", id);
                 startActivity(e);
                 return true;
-            case R.id.editMedicina:
+            case R.id.menu_medicina_editar:
                 finish();
                 Intent i = new Intent(this, CrearMedicina.class);
                 long id2 = medicina.getId();
@@ -93,10 +93,10 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
                 startActivity(i);
 
                 return true;
-            case R.id.deleteMedicina:
-                finish();
+            case R.id.menu_medicina_borrar:
                 medicina.delete();
                 Intent i2 = new Intent(this, ListarMedicinas.class);
+                finish();
                 startActivity(i2);
                 return true;
             default:
@@ -108,14 +108,14 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.descripcionMedicinaM:
+            case R.id.mm_descripcion:
                 if(mostrar)
                     descripcion.setText("Descripcion >");
                 else
                     descripcion.setText(medicina.getDescripcion());
                 mostrar = !mostrar;
                 break;
-            case R.id.alarmaMedicinaM:
+            case R.id.mm_texto_alarmas:
                 descripcion.setText("Descripcion >");
                 mostrar = false;
                 break;

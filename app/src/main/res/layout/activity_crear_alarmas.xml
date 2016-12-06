@@ -40,7 +40,7 @@
                 android:text="MEDICINA X"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
+                android:id="@+id/ca_nombre_medicina"
                 android:textColor="@android:color/background_dark" />
 
             <Space
@@ -57,44 +57,44 @@
                 android:text="LUNES"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxLunes"
+                android:id="@+id/ca_lunes"
                 android:checked="true" />
 
             <CheckBox
                 android:text="MARTES"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxMartes" />
+                android:id="@+id/ca_martes" />
 
             <CheckBox
                 android:text="MIERCOLES"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxMiercoles" />
+                android:id="@+id/ca_miercoles" />
 
             <CheckBox
                 android:text="JUEVES"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxJueves" />
+                android:id="@+id/ca_jueves" />
 
             <CheckBox
                 android:text="VIERNES"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxViernes" />
+                android:id="@+id/ca_viernes" />
 
             <CheckBox
                 android:text="SABADO"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxSabado" />
+                android:id="@+id/ca_sabado" />
 
             <CheckBox
                 android:text="DOMINGO"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/checkBoxDomingo" />
+                android:id="@+id/ca_domingo" />
 
             <Space
                 android:layout_width="match_parent"
@@ -114,18 +114,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:id="@+id/listaHorasAlarma">
+                    android:id="@+id/ca_lista_horas">
 
                     <TimePicker
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/horaAlarma" />
+                        android:id="@+id/ca_hora" />
 
                     <Button
                         android:text="NUEVA HORA"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/nuevaHora"
+                        android:id="@+id/ca_nueva_hora"
                         android:textColor="@color/colorAccent" />
 
                 </LinearLayout>
@@ -146,8 +146,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/porcionAlarma"
-                android:text="30" />
+                android:id="@+id/ca_porcion"
+                android:text="30"
+                android:selectAllOnFocus="true" />
 
             <Space
                 android:layout_width="match_parent"
@@ -163,10 +164,12 @@
                 android:layout_width="match_parent"
                 android:inputType="textMultiLine"
                 android:ems="10"
-                android:id="@+id/notaAlarma"
+                android:id="@+id/ca_nota"
                 android:layout_weight="0.16"
                 android:layout_height="150dp"
-                android:text="Apuntes sobre la alarma" />
+                android:text="Apuntes sobre la alarma"
+                android:selectAllOnFocus="true"
+                android:singleLine="false" />
 
             <Space
                 android:layout_width="match_parent"
@@ -176,7 +179,7 @@
                 android:text="GUARDAR ALARMA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/guardarAlarma" />
+                android:id="@+id/ca_guardar" />
 
         </LinearLayout>
     </ScrollView>

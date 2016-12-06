@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import grupoasimov.pastillero.Modelo.Medicina;
 import grupoasimov.pastillero.R;
-import grupoasimov.pastillero.utiles.Lista_adaptador;
+import grupoasimov.pastillero.utiles.ListaMedicinasAdaptador;
 import grupoasimov.pastillero.utiles.Lista_entrada;
 
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class ListarMedicinas extends AppCompatActivity {
 
 
         ListView lista = (ListView) findViewById(R.id.listaEntrada);
-        lista.setAdapter(new Lista_adaptador(this, R.layout.list_row, datos) {
+        lista.setAdapter(new ListaMedicinasAdaptador(this, R.layout.list_row, datos) {
             @Override
             public void onEntrada(Object entrada, View view) {
                 TextView texto_superior_entrada = (TextView) view.findViewById(R.id.texto_superior);
@@ -77,18 +77,18 @@ public class ListarMedicinas extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.mcmenu, menu);
+        getMenuInflater().inflate(R.menu.menu_listar_medicinas, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.help:
+            case R.id.menu_listar_medicina_ayuda:
                 Intent helpActivity = new Intent(this, MostrarAyuda.class);
                 startActivity(helpActivity);
                 return true;
-            case R.id.add:
+            case R.id.menu_listar_medicina_nueva_medicina:
                 finish();
                 Intent i = new Intent(this, CrearMedicina.class);
                 i.putExtra("actualizar", false);
@@ -96,11 +96,11 @@ public class ListarMedicinas extends AppCompatActivity {
                 return true;
 
 
-            case R.id.addOtro:
+            case R.id.menu_listar_medicina_nuevo_otro:
                 Intent a = new Intent(this, AgregarActivity.class);
                 startActivity(a);
                 return true;
-            case R.id.item_paciente_cuidador:
+            case R.id.menu_listar_medicina_paciente_cuidador:
                 Intent e = new Intent(this, MostrarPacienteCuidador.class);
                 startActivity(e);
                 return true;
