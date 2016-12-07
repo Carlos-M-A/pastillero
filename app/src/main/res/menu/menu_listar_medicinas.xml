@@ -1,19 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="grupoasimov.pastillero.controladores.ListarMedicinas">
-    <item android:title="Paciente-Cuidador"
+    tools:context="grupoasimov.pastillero.controladores.MostrarListaMedicinas">
+    <item android:title="@string/paciente_cuidador"
         android:id="@+id/menu_listar_medicina_paciente_cuidador" />
     <item android:id="@+id/menu_listar_medicina_ayuda"
         android:icon="@android:drawable/ic_menu_search"
-        android:title="@string/help"
-        android:orderInCategory="1"
-        android:showAsAction="never"/>
+        android:title="@string/ayuda"
+        android:orderInCategory="1"/>
     <item android:id="@+id/menu_listar_medicina_nueva_medicina"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="@string/add"
-        android:orderInCategory="2"
-        android:showAsAction="never"/>
+        android:title="@string/nueva_medicina"
+        android:orderInCategory="2"/>
     <item android:title="añadir otro"
         android:id="@+id/menu_listar_medicina_nuevo_otro" />
 </menu>

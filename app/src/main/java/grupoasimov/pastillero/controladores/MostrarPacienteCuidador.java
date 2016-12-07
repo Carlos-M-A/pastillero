@@ -47,28 +47,13 @@ public class MostrarPacienteCuidador extends AppCompatActivity {
         telefonoCuidador  = (TextView) findViewById(R.id.mpc_telefono_cuidador);
         emailCuidador  = (TextView) findViewById(R.id.mpc_email_cuidador);
 
-        if(Paciente.listAll(Paciente.class).size()==0) {
-            Log.d("PACIENTE-CUIDADOR", "HNo hay pacientes");
-            hayDatos = false;
-        }
-        else{
-            hayDatos = true;
-            paciente = Paciente.listAll(Paciente.class).get(0);
-            cuidador = Cuidador.listAll(Cuidador.class).get(0);
+        actualizaDatos();
+    }
 
-            nombrePaciente.setText(paciente.getNombre());
-            apellidosPaciente.setText(paciente.getApellidos());
-            direccionPaciente.setText(paciente.getDireccion());
-            telefonoPaciente.setText(paciente.getTelefono());
-            emailPaciente.setText(paciente.getEmail());
-
-            nombreCuidador.setText(cuidador.getNombre());
-            apellidosCuidador.setText(cuidador.getApellidos());
-            direccionCuidador.setText(cuidador.getDireccion());
-            telefonoCuidador.setText(cuidador.getTelefono());
-            emailCuidador.setText(cuidador.getEmail());
-        }
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        actualizaDatos();
     }
 
     @Override
@@ -88,8 +73,7 @@ public class MostrarPacienteCuidador extends AppCompatActivity {
             case R.id.menu_paciente_cuidador_borrar:
                 Paciente.deleteAll(Paciente.class);
                 Cuidador.deleteAll(Cuidador.class);
-                Intent e = new Intent(this, MostrarPacienteCuidador.class);
-                startActivity(e);
+                actualizaDatos();
                 return true;
             case R.id.menu_paciente_cuidador_ayuda:
                 Intent helpActivity = new Intent(this, MostrarAyuda.class);
@@ -99,6 +83,38 @@ public class MostrarPacienteCuidador extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
 
+    public void actualizaDatos(){
+        if(Paciente.listAll(Paciente.class).size()==0) {
+            hayDatos = false;
+
+            nombrePaciente.setText("");
+            apellidosPaciente.setText("");
+            direccionPaciente.setText("");
+            telefonoPaciente.setText("");
+            emailPaciente.setText("");
+            nombreCuidador.setText("");
+            apellidosCuidador.setText("");
+            direccionCuidador.setText("");
+            telefonoCuidador.setText("");
+            emailCuidador.setText("");
+        }
+        else{
+            hayDatos = true;
+            paciente = Paciente.listAll(Paciente.class).get(0);
+            cuidador = Cuidador.listAll(Cuidador.class).get(0);
+
+            nombrePaciente.setText(paciente.getNombre());
+            apellidosPaciente.setText(paciente.getApellidos());
+            direccionPaciente.setText(paciente.getDireccion());
+            telefonoPaciente.setText(paciente.getTelefono());
+            emailPaciente.setText(paciente.getEmail());
+            nombreCuidador.setText(cuidador.getNombre());
+            apellidosCuidador.setText(cuidador.getApellidos());
+            direccionCuidador.setText(cuidador.getDireccion());
+            telefonoCuidador.setText(cuidador.getTelefono());
+            emailCuidador.setText(cuidador.getEmail());
+        }
     }
 }

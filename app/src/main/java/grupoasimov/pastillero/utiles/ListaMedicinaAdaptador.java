@@ -6,13 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
-import grupoasimov.pastillero.Modelo.Alarma;
 import grupoasimov.pastillero.Modelo.Medicina;
 import grupoasimov.pastillero.R;
 
@@ -25,7 +23,7 @@ public class ListaMedicinaAdaptador extends ArrayAdapter {
     List<Medicina> objects;
 
     public ListaMedicinaAdaptador(Context context, List objects) {
-        super(context, R.layout.medicina_fila, objects);
+        super(context, R.layout.fila_medicina, objects);
         this.context = context;
         this.objects = objects;
     }
@@ -35,7 +33,7 @@ public class ListaMedicinaAdaptador extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Inflamos la vista
         LayoutInflater inflater = LayoutInflater.from(context);
-        View item = inflater.inflate(R.layout.medicina_fila, null);
+        View item = inflater.inflate(R.layout.fila_medicina, null);
 
         Medicina medicina = objects.get(position);
 

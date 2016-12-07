@@ -89,7 +89,5 @@ public class CrearPacienteCuidador extends AppCompatActivity implements View.OnC
         cuidador.save();
 
         finish();
-        Intent i = new Intent(this, MostrarPacienteCuidador.class);
-        startActivity(i);
     }
 }

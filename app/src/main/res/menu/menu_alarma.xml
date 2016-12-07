@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Borrar"
+    <item android:title="@string/borrar"
         android:id="@+id/menu_alarma_borrar" />
-    <item android:title="ayuda"
+    <item android:title="@string/ayuda"
         android:id="@+id/menu_alarma_ayuda" />
 </menu>

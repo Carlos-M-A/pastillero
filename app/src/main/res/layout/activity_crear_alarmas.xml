@@ -21,90 +21,83 @@
             android:weightSum="1">
 
             <TextView
-                android:text="INTRODUCIR ALARMA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView2" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="17dp" />
-
-            <TextView
-                android:text="MEDICINA DE LA ALARMA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView3" />
-
-            <TextView
                 android:text="MEDICINA X"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ca_nombre_medicina"
-                android:textColor="@android:color/background_dark" />
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:textStyle="normal|bold"
+                android:textAlignment="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="182dp"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:text="LUNES"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_lunes"
+                        android:checked="true" />
+
+                    <CheckBox
+                        android:text="MARTES"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_martes" />
+
+                    <CheckBox
+                        android:text="MIERCOLES"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_miercoles" />
+
+                    <CheckBox
+                        android:text="JUEVES"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_jueves" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:text="VIERNES"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_viernes" />
+
+                    <CheckBox
+                        android:text="SABADO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_sabado" />
+
+                    <CheckBox
+                        android:text="DOMINGO"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ca_domingo" />
+                </LinearLayout>
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
-
-            <TextView
-                android:text="DIAS DE LA SEMANA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView12" />
-
-            <CheckBox
-                android:text="LUNES"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_lunes"
-                android:checked="true" />
-
-            <CheckBox
-                android:text="MARTES"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_martes" />
-
-            <CheckBox
-                android:text="MIERCOLES"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_miercoles" />
-
-            <CheckBox
-                android:text="JUEVES"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_jueves" />
-
-            <CheckBox
-                android:text="VIERNES"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_viernes" />
-
-            <CheckBox
-                android:text="SABADO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_sabado" />
-
-            <CheckBox
-                android:text="DOMINGO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ca_domingo" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:text="HORAS DEL DIA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView13" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -135,30 +128,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp" />
 
-            <TextView
-                android:text="CANTIDAD TOMA (En mg)"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView16" />
+                android:layout_height="match_parent">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/ca_porcion"
-                android:text="30"
-                android:selectAllOnFocus="true" />
+                <TextView
+                    android:text="Cantidad porcion (En mg)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView16"
+                    android:layout_weight="1" />
+
+                <EditText
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/ca_porcion"
+                    android:text="30"
+                    android:selectAllOnFocus="true"
+                    android:textAlignment="center" />
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
-
-            <TextView
-                android:text="NOTA SOBRE LA ALARMA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView15" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -167,16 +162,17 @@
                 android:id="@+id/ca_nota"
                 android:layout_weight="0.16"
                 android:layout_height="150dp"
-                android:text="Apuntes sobre la alarma"
+                android:text="Nota sobre la alarma"
                 android:selectAllOnFocus="true"
-                android:singleLine="false" />
+                android:singleLine="false"
+                android:textAlignment="center" />
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="40dp" />
 
             <Button
-                android:text="GUARDAR ALARMA"
+                android:text="GUARDAR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ca_guardar" />

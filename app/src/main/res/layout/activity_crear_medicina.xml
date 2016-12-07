@@ -22,82 +22,61 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <TextView
-                android:text="INTRODUCIR DATOS MEDICINA"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView5"
-                android:textStyle="normal|bold" />
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    app:srcCompat="@android:drawable/ic_menu_camera"
+                    android:id="@+id/cm_imagen"
+                    android:layout_height="150dp"
+                    android:background="@drawable/boton_redondo"
+                    android:layout_width="150dp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Name"
+                    android:ems="10"
+                    android:id="@+id/cm_nombre"
+                    android:selectAllOnFocus="true"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:text="Porción de cada dosis (En mg)"
+                    android:layout_width="258dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"
+                    android:textAlignment="viewStart" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/cm_porcion"
+                    android:text="89"
+                    android:selectAllOnFocus="true"
+                    android:textAlignment="center"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
-
-            <TextView
-                android:text="Fotografia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView9"
-                android:textAlignment="textStart" />
-
-            <ImageButton
-                android:layout_width="match_parent"
-                app:srcCompat="@android:drawable/ic_menu_camera"
-                android:id="@+id/cm_imagen"
-                android:layout_height="100dp" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:text="Nombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView6"
-                android:textAlignment="textStart" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Name"
-                android:ems="10"
-                android:id="@+id/cm_nombre"
-                android:selectAllOnFocus="true"
-                android:textAlignment="center" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:text="Porción de cada dosis (En mg)"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView8"
-                android:textAlignment="viewStart" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
-                android:id="@+id/cm_porcion"
-                android:text="89"
-                android:selectAllOnFocus="true"
-                android:textAlignment="center" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:text="Descripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView7"
-                android:textAlignment="viewStart" />
 
             <EditText
                 android:layout_width="match_parent"
@@ -106,14 +85,11 @@
                 android:id="@+id/cm_descripcion"
                 android:text="Descripcion"
                 android:layout_height="98dp"
-                android:textAlignment="center" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="20dp" />
+                android:textAlignment="center"
+                android:selectAllOnFocus="true" />
 
             <Button
-                android:text="GUARDAR MEDICINA"
+                android:text="GUARDAR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cm_guardar" />

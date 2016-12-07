@@ -6,10 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.TextClock;
 import android.widget.TextView;
 
-import java.util.Calendar;
 import java.util.List;
 
 import grupoasimov.pastillero.Modelo.Alarma;
@@ -23,11 +21,11 @@ import grupoasimov.pastillero.R;
 //http://www.proyectosimio.com/es/programacion-android-listview-adapter-personalizado-i/
 public class ListaAlarmaAdaptador extends ArrayAdapter {
 
-    Context context;
-    List<Alarma> objects;
+    private Context context;
+    private List<Alarma> objects;
 
-    public ListaAlarmaAdaptador(Context context, List objects) {
-        super(context, R.layout.alarma_fila, objects);
+    public ListaAlarmaAdaptador(Context context, List<Alarma> objects) {
+        super(context, R.layout.fila_alarma, objects);
         this.context = context;
         this.objects = objects;
     }
@@ -37,7 +35,7 @@ public class ListaAlarmaAdaptador extends ArrayAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         // Inflamos la vista
         LayoutInflater inflater = LayoutInflater.from(context);
-        View item = inflater.inflate(R.layout.alarma_fila, null);
+        View item = inflater.inflate(R.layout.fila_alarma, null);
 
         Alarma alarma = objects.get(position);
 
@@ -49,9 +47,6 @@ public class ListaAlarmaAdaptador extends ArrayAdapter {
 
         TextView porcion = (TextView) item.findViewById(R.id.porcion_alarma);
         porcion.setText(Integer.toString(alarma.getCantidadToma()) + " mg");
-
-
-
 
         // Devolvemos la vista para que se muestre en el ListView.
         return item;

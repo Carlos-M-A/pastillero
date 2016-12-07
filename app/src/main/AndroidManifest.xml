@@ -24,17 +24,13 @@
             android:name=".controladores.AgregarActivity"
             android:label="@string/title_activity_agregar"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".controladores.ListarMedicinas"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+
+        <activity android:name=".controladores.MostrarListaMedicinas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <meta-data
             android:name="DATABASE"
             android:value="bd_pastillero5.db" />
@@ -63,7 +59,7 @@
 
         <activity android:name=".controladores.MostrarAlarma" />
         <activity android:name=".controladores.CrearPacienteCuidador" />
-        <activity android:name=".controladores.MostrarPacienteCuidador"></activity>
+        <activity android:name=".controladores.MostrarPacienteCuidador" />
     </application>
 
 </manifest>

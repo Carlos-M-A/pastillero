@@ -1,58 +1,26 @@
 <resources>
+
     <string name="app_name">Cluster09</string>
-    <string name="help">Ayuda</string>
-    <string name="add">Añadir</string>
-    <string name="edit">Editar</string>
-    <string name="delete">Borrar</string>
+
+    <!-- Para los menus de opciones -->
+    <string name="ayuda">Ayuda</string>
+    <string name="nueva_medicina">Nueva medicina</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Borrar</string>
+    <string name="paciente_cuidador">Paciente Cuidador</string>
+    <string name="nueva_alarma">Nueva alarma</string>
+
+    <!-- Para los titulos de actividades -->
     <string name="title_activity_agregar">Añadir</string>
     <string name="title_activity_ayuda">Ayuda</string>
-    <string name="AyudaText" translatable="false">SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
+
+    <!-- Para los layouts -->
+    <string name="AyudaText" translatable="false">
+        SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
         El Aburrimiento\r\n\r
-(POEMA ESCÉNICO)\r\n\r
-
-Me aburro.\r\n\r
-Me aburro.\r\n\r
-Me aburro.\r\n\r
-¡Cómo en Roma me aburro!\r\n\r
-Más que nunca me aburro.\r\n\r
-Estoy muy aburrido.\r\n\r
-¡Qué aburrido estoy!\r\n\r
-Quiero decir de todas las maneras\r\n\r
-lo aburrido que estoy.\r\n\r
-Todos ven en mi cara mi gran aburrimiento.\r\n\r
-
-Innegable, señor.\r\n\r
-Es indisimulable.\r\n\r
-¿Está usted aburrido?\r\n\r
-Me parece que está usted muy aburrido.\r\n\r
-Dígame, ¿adónde va tan aburrido?\r\n\r
-¿Que usted va a las iglesias con ese aburrimiento?\r\n\r
-No es posible, señor, que vaya a las iglesias\r\n\r
-con ese aburrimiento.\r\n\r
-¿Que a los museos -dice- siendo tan aburrido?\r\n\r
-¿Quién no siente en mi andar lo aburrido que estoy?\r\n\r
-¡Qué aire de aburrimiento!\r\n\r
-A la legua se ve su gran aburrimiento.\r\n\r
-Mi gran aburrimiento.\r\n\r
-Lo aburrido que estoy.\r\n\r
-Y sin embargo... ¡Oooh!\r\n\r
-He pisado una caca...\r\n\r
-Acabo de pisar -¡santo Dios!- una caca...\r\n\r
-Dicen que trae suerte el pisar una caca...\r\n\r
-Que trae mucha suerte el pisar una caca...\r\n\r
-¿Suerte, señores, suerte?\r\n\r
-¿La suerte... la... la suerte?\r\n\r
-Estoy pegado al suelo.\r\n\r
-No puedo caminar.\r\n\r
-Ahora sí que ya nunca volveré a caminar.\r\n\r
-Me aburro, ay, me aburro.\r\n\r
-Más que nunca me aburro.\r\n\r
-Muerto de aburrimiento.\r\n\r
-No hablo más...\r\n\r
-Me morí.\r\n\r	</string>
+        No hablo más...\r\n\r
+        Me morí.\r\n\r	</string>
     <string name="Nombre">Nombre</string>
     <string name="descripcion">Descripción</string>
     <string name="Dosis">Dosis</string>
-    <string name="addAlarma">Añadir Alarma</string>
-
 </resources>

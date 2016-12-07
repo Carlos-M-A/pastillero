@@ -1,22 +1,21 @@
 package grupoasimov.pastillero.controladores;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.util.List;
 
 import grupoasimov.pastillero.Modelo.Medicina;
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.ListaMedicinaAdaptador;
 
-import java.util.List;
-
-public class ListarMedicinas extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class MostrarListaMedicinas extends AppCompatActivity  implements AdapterView.OnItemClickListener{
 
     List<Medicina> medicinas;
     ListView listaMedicinas;
@@ -24,15 +23,11 @@ public class ListarMedicinas extends AppCompatActivity implements AdapterView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listar);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        listaMedicinas = (ListView) findViewById(R.id.listaEntrada);
+        setContentView(R.layout.activity_mostrar_lista_medicinas);
 
-        setSupportActionBar(toolbar);
-
+        listaMedicinas = (ListView) findViewById(R.id.mlm_lista);
         medicinas = Medicina.listAll(Medicina.class);
         ListaMedicinaAdaptador listaMedicinaAdaptador = new ListaMedicinaAdaptador(this, medicinas);
-
         listaMedicinas.setAdapter(listaMedicinaAdaptador);
         listaMedicinas.setOnItemClickListener(this);
     }
@@ -88,4 +83,5 @@ public class ListarMedicinas extends AppCompatActivity implements AdapterView.On
         i.putExtra("idMedicina", id2);
         startActivity(i);
     }
+
 }

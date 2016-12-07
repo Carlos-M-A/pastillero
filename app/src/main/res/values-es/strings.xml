@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Cluster09</string>
-    <string name="add">Añadir</string>
-    <string name="delete">Borrar</string>
-    <string name="edit">Editar</string>
-    <string name="help">Ayuda</string>
+
+    <!-- Para los menus de opciones -->
+    <string name="ayuda">Ayuda</string>
+    <string name="nueva_medicina">Nueva medicina</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Borrar</string>
+    <string name="paciente_cuidador">Paciente Cuidador</string>
+    <string name="nueva_alarma">Nueva alarma</string>
+
+    <!-- Para los titulos de actividades -->
     <string name="title_activity_agregar">Añadir</string>
     <string name="title_activity_ayuda">Ayuda</string>
+
+    <!-- Para los layouts -->
+    <string name="AyudaText" translatable="false">
+        SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
+        El Aburrimiento\r\n\r
+        No hablo más...\r\n\r
+        Me morí.\r\n\r	</string>
     <string name="Nombre">Nombre</string>
     <string name="descripcion">Descripción</string>
     <string name="Dosis">Dosis</string>

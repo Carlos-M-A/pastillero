@@ -37,50 +37,24 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_medicina);
 
-        //Insertamos nombre de la medicina
-        medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
-
         nombre = (TextView) findViewById(R.id.mm_nombre);
         porcion = (TextView) findViewById(R.id.mm_porcion);
         descripcion = (TextView) findViewById(R.id.mm_descripcion);
-        descripcion.setOnClickListener(this);
         alarmasEtiqueta = (TextView) findViewById(R.id.mm_texto_alarmas);
+        listaAlarmas = (ListView) findViewById(R.id.mm_lista_alarmas);
+        descripcion.setOnClickListener(this);
         alarmasEtiqueta.setOnClickListener(this);
         alarmasEtiqueta.setOnTouchListener(this);
 
+        medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
 
-        listaAlarmas = (ListView) findViewById(R.id.mm_lista_alarmas);
-
-        nombre.setText(medicina.getNombre());
-        porcion.setText(Integer.toString(medicina.getCantidadPorcion()) + " mg");
-        descripcion.setText(medicina.getDescripcion());
-
-        // Obtiene las alarmas de la medicina
-        alarmas = Alarma.find(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
-
-        ListaAlarmaAdaptador listaAlarmaAdaptador = new ListaAlarmaAdaptador(this, alarmas);
-
-        listaAlarmas.setAdapter(listaAlarmaAdaptador);
-        listaAlarmas.setOnItemClickListener(this);
+        actualizaDatos();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-        medicina = Medicina.findById(Medicina.class, medicina.getId());
-        nombre.setText(medicina.getNombre());
-        porcion.setText(Integer.toString(medicina.getCantidadPorcion()) + " mg");
-        descripcion.setText(medicina.getDescripcion());
-
-        // Obtiene las alarmas de la medicina
-        alarmas = Alarma.find(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
-
-        ListaAlarmaAdaptador listaAlarmaAdaptador = new ListaAlarmaAdaptador(this, alarmas);
-
-        listaAlarmas.setAdapter(listaAlarmaAdaptador);
-        listaAlarmas.setOnItemClickListener(this);
-        Log.d("MOSTRAR MEDICINA", "onResume");
+        actualizaDatos();
     }
 
     @Override
@@ -159,5 +133,17 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         Intent i = new Intent(this, MostrarAlarma.class);
         i.putExtra("idAlarma", alarma.getId());
         startActivity(i);
+    }
+
+    public void actualizaDatos(){
+        medicina = Medicina.findById(Medicina.class, medicina.getId());
+        nombre.setText(medicina.getNombre());
+        porcion.setText(Integer.toString(medicina.getCantidadPorcion()) + " mg");
+        descripcion.setText(medicina.getDescripcion());
+        // Obtiene las alarmas de la medicina
+        alarmas = Alarma.find(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
+        ListaAlarmaAdaptador listaAlarmaAdaptador = new ListaAlarmaAdaptador(this, alarmas);
+        listaAlarmas.setAdapter(listaAlarmaAdaptador);
+        listaAlarmas.setOnItemClickListener(this);
     }
 }
