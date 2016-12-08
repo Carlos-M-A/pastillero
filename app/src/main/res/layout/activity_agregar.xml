@@ -49,7 +49,7 @@
             android:layout_marginStart="22dp"
             android:layout_alignTop="@+id/button2"
             android:layout_toEndOf="@+id/button2"
-            android:hint="@string/Nombre"/>
+            android:hint="@string/nombre"/>
 
         <EditText
             android:layout_width="wrap_content"

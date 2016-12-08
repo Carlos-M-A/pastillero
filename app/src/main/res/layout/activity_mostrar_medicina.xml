@@ -67,7 +67,7 @@
             android:layout_height="10dp" />
 
         <TextView
-            android:text="Descripcion"
+            android:text="@string/descripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/mm_descripcion"
@@ -78,7 +78,7 @@
             android:layout_height="15dp" />
 
         <TextView
-            android:text="ALARMAS"
+            android:text="@string/alarmas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/mm_texto_alarmas"

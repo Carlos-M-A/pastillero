@@ -45,26 +45,26 @@
                     android:layout_height="match_parent">
 
                     <CheckBox
-                        android:text="LUNES"
+                        android:text="@string/lunes_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_lunes"
                         android:checked="true" />
 
                     <CheckBox
-                        android:text="MARTES"
+                        android:text="@string/martes_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_martes" />
 
                     <CheckBox
-                        android:text="MIERCOLES"
+                        android:text="@string/miercoles_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_miercoles" />
 
                     <CheckBox
-                        android:text="JUEVES"
+                        android:text="@string/jueves_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_jueves" />
@@ -76,19 +76,19 @@
                     android:layout_height="match_parent">
 
                     <CheckBox
-                        android:text="VIERNES"
+                        android:text="@string/viernes_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_viernes" />
 
                     <CheckBox
-                        android:text="SABADO"
+                        android:text="@string/sabado_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_sabado" />
 
                     <CheckBox
-                        android:text="DOMINGO"
+                        android:text="@string/domingo_largo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_domingo" />
@@ -115,7 +115,7 @@
                         android:id="@+id/ca_hora" />
 
                     <Button
-                        android:text="NUEVA HORA"
+                        android:text="@string/nueva_hora"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ca_nueva_hora"
@@ -134,7 +134,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:text="Cantidad porcion (En mg)"
+                    android:text="@string/cantidad_porcion_en_mg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView16"
@@ -146,7 +146,7 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/ca_porcion"
-                    android:text="30"
+                    android:text="100"
                     android:selectAllOnFocus="true"
                     android:textAlignment="center" />
             </LinearLayout>
@@ -162,7 +162,7 @@
                 android:id="@+id/ca_nota"
                 android:layout_weight="0.16"
                 android:layout_height="150dp"
-                android:text="Nota sobre la alarma"
+                android:text="@string/nota_alarma"
                 android:selectAllOnFocus="true"
                 android:singleLine="false"
                 android:textAlignment="center" />
@@ -172,7 +172,7 @@
                 android:layout_height="40dp" />
 
             <Button
-                android:text="GUARDAR"
+                android:text="@string/guardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ca_guardar" />

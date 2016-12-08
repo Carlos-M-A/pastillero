@@ -37,8 +37,8 @@ public class MostrarAlarma extends AppCompatActivity {
 
         nombreMedicinaA.setText(alarma.getMedicina().getNombre());
         horaAlarmaA.setText(alarma.getStringHora());
-        diasAlarmaA.setText(alarma.getStringDiasLargo());
-        porcionAlarmaA.setText(alarma.getStringPorcion());
+        diasAlarmaA.setText(alarma.getStringDiasLargo(getBaseContext()));
+        porcionAlarmaA.setText(alarma.getStringPorcion(getBaseContext()));
         notaAlarmaA.setText(alarma.getNota());
     }
 

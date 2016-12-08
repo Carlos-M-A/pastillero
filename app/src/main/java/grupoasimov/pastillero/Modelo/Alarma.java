@@ -1,9 +1,13 @@
 package grupoasimov.pastillero.Modelo;
 
+import android.content.Context;
+
 import com.orm.SugarRecord;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+
+import grupoasimov.pastillero.R;
 
 /**
  * Created by ferreri on 15/11/16.
@@ -169,40 +173,41 @@ public class Alarma extends SugarRecord{
         return horaString;
     }
 
-    public String getStringDiasCorto(){
+    public String getStringDiasCorto(Context context){
+
         String cadenaDias = "";
         if(cadaXDias==0) {
-            if (isLunes()) cadenaDias = cadenaDias + " Lu";
-            if (isMartes()) cadenaDias = cadenaDias + " Ma";
-            if (isMiercoles()) cadenaDias = cadenaDias + " Mi";
-            if (isJueves()) cadenaDias = cadenaDias + " Ju";
-            if (isViernes()) cadenaDias = cadenaDias + " Vi";
-            if (isSabado()) cadenaDias = cadenaDias + " Sa";
-            if (isDomingo()) cadenaDias = cadenaDias + " Do";
+            if (isLunes()) cadenaDias = cadenaDias + " " + context.getString(R.string.lunes_corto);
+            if (isMartes()) cadenaDias = cadenaDias + " " + context.getString(R.string.martes_corto);
+            if (isMiercoles()) cadenaDias = cadenaDias + " " + context.getString(R.string.miercoles_corto);
+            if (isJueves()) cadenaDias = cadenaDias + " " + context.getString(R.string.jueves_corto);
+            if (isViernes()) cadenaDias = cadenaDias + " " + context.getString(R.string.viernes_corto);
+            if (isSabado()) cadenaDias = cadenaDias + " " + context.getString(R.string.sabado_corto);
+            if (isDomingo()) cadenaDias = cadenaDias + " " + context.getString(R.string.domingo_corto);
         } else{
             cadenaDias = "Cada " + Integer.toString(cadaXDias) + " dias";
         }
         return cadenaDias;
     }
 
-    public String getStringDiasLargo(){
+    public String getStringDiasLargo(Context context){
         String cadenaDias = "";
         if(cadaXDias==0) {
-            if (isLunes()) cadenaDias = cadenaDias + "Lunes";
-            if (isMartes()) cadenaDias = cadenaDias + " Martes";
-            if (isMiercoles()) cadenaDias = cadenaDias + " Miercoles";
-            if (isJueves()) cadenaDias = cadenaDias + " Jueves";
-            if (isViernes()) cadenaDias = cadenaDias + " Viernes";
-            if (isSabado()) cadenaDias = cadenaDias + " Sabado";
-            if (isDomingo()) cadenaDias = cadenaDias + " Domingo";
+            if (isLunes()) cadenaDias = cadenaDias + " " + context.getString(R.string.lunes_largo);
+            if (isMartes()) cadenaDias = cadenaDias + " " + context.getString(R.string.martes_largo);
+            if (isMiercoles()) cadenaDias = cadenaDias + " " + context.getString(R.string.miercoles_largo);
+            if (isJueves()) cadenaDias = cadenaDias + " " + context.getString(R.string.jueves_largo);
+            if (isViernes()) cadenaDias = cadenaDias + " " + context.getString(R.string.viernes_largo);
+            if (isSabado()) cadenaDias = cadenaDias + " " + context.getString(R.string.sabado_largo);
+            if (isDomingo()) cadenaDias = cadenaDias + " " + context.getString(R.string.domingo_largo);
+
         } else{
             cadenaDias = "Cada " + Integer.toString(cadaXDias) + " dias";
         }
         return cadenaDias;
     }
 
-    public String getStringPorcion(){
-        String cadenaPorcion = Integer.toString(cantidadToma) + " mg";
-        return cadenaPorcion;
+    public String getStringPorcion(Context context){
+        return Integer.toString(cantidadToma) + context.getString(R.string.miligramos_corto);
     }
 }

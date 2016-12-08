@@ -21,7 +21,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:text="PACIENTE"
+                android:text="@string/paciente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Nombre"
+                android:text="@string/nombre"
                 android:ems="10"
                 android:id="@+id/cpc_nombre_paciente"
                 android:selectAllOnFocus="true" />
@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Apellidos"
+                android:text="@string/apellidos"
                 android:ems="10"
                 android:id="@+id/cpc_apellidos_paciente"
                 android:selectAllOnFocus="true" />
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Direccion"
+                android:text="@string/direccion"
                 android:ems="10"
                 android:id="@+id/cpc_direccion_paciente"
                 android:selectAllOnFocus="true" />
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:text="Telefono"
+                android:text="@string/telefono"
                 android:ems="10"
                 android:id="@+id/cpc_telefono_paciente"
                 android:selectAllOnFocus="true" />
@@ -69,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Email"
+                android:text="@string/email"
                 android:ems="10"
                 android:id="@+id/cpc_email_paciente"
                 android:selectAllOnFocus="true" />
@@ -79,7 +79,7 @@
                 android:layout_height="30dp" />
 
             <TextView
-                android:text="CUIDADOR"
+                android:text="@string/cuidador"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView10"
@@ -93,14 +93,14 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/cpc_nombre_cuidador"
-                android:text="Nombre"
+                android:text="@string/nombre"
                 android:selectAllOnFocus="true" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Apellidos"
+                android:text="@string/apellidos"
                 android:ems="10"
                 android:id="@+id/cpc_apellidos_cuidador"
                 android:selectAllOnFocus="true" />
@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Direccion"
+                android:text="@string/direccion"
                 android:ems="10"
                 android:id="@+id/cpc_direccion_cuidador"
                 android:selectAllOnFocus="true" />
@@ -117,7 +117,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Telefono"
+                android:text="@string/telefono"
                 android:ems="10"
                 android:id="@+id/cpc_telefono_cuidador"
                 android:inputType="phone"
@@ -127,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Email"
+                android:text="@string/email"
                 android:ems="10"
                 android:id="@+id/cpc_email_cuidador"
                 android:selectAllOnFocus="true" />
@@ -137,7 +137,7 @@
                 android:layout_height="40dp" />
 
             <Button
-                android:text="GUARDAR"
+                android:text="@string/guardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cpc_guardar" />

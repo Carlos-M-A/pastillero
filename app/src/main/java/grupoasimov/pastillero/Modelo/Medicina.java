@@ -1,7 +1,11 @@
 package grupoasimov.pastillero.Modelo;
 
 
+import android.content.Context;
+
 import com.orm.SugarRecord;
+
+import grupoasimov.pastillero.R;
 
 /**
  * Created by ferreri on 15/11/16.
@@ -63,5 +67,9 @@ public class Medicina extends SugarRecord {
                 ", cantidadPorcion=" + cantidadPorcion +
                 ", urlImagen='" + urlImagen + '\'' +
                 '}';
+    }
+
+    public String getStringPorcion(Context context){
+        return Integer.toString(cantidadPorcion) + context.getString(R.string.miligramos_corto);
     }
 }

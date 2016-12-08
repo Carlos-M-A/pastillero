@@ -3,24 +3,57 @@
     <string name="app_name">Cluster09</string>
 
     <!-- Para los menus de opciones -->
-    <string name="ayuda">Ayuda</string>
-    <string name="nueva_medicina">Nueva medicina</string>
-    <string name="editar">Editar</string>
-    <string name="borrar">Borrar</string>
-    <string name="paciente_cuidador">Paciente Cuidador</string>
-    <string name="nueva_alarma">Nueva alarma</string>
+    <string name="ayuda">Help</string>
+    <string name="nueva_medicina">New medicine</string>
+    <string name="editar">Edit</string>
+    <string name="borrar">Delete</string>
+    <string name="paciente_cuidador">Patient Carer</string>
+    <string name="nueva_alarma">New Alarm</string>
 
     <!-- Para los titulos de actividades -->
     <string name="title_activity_agregar">Añadir</string>
-    <string name="title_activity_ayuda">Ayuda</string>
+    <string name="title_activity_CrearMedicina">Create Medicine</string>
+    <string name="title_activity_CrearAlarmas">Create Alarm</string>
+    <string name="title_activity_MostrarAlarma">Alarm data</string>
+    <string name="title_activity_CrearPacienteCuidador">Edit Patient and Carer</string>
+    <string name="title_activity_MostrarPacienteCuidador">Patient-Carer data</string>
+    <string name="title_activity_MostrarMedicina">Medicine data</string>
+    <string name="title_activity_MostrarAyuda">Help</string>
 
     <!-- Para los layouts -->
-    <string name="AyudaText" translatable="false">
+    <string name="AyudaText">
         SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
         El Aburrimiento\r\n\r
         No hablo más...\r\n\r
         Me morí.\r\n\r	</string>
-    <string name="Nombre">Nombre</string>
-    <string name="descripcion">Descripción</string>
-    <string name="Dosis">Dosis</string>
+
+    <string name="nombre">Name</string>
+    <string name="descripcion">Description</string>
+    <string name="Dosis">Dose</string>
+    <string name="lunes_largo">Monday</string>
+    <string name="martes_largo">Tuesday</string>
+    <string name="miercoles_largo">Wednesday</string>
+    <string name="jueves_largo">Thursday</string>
+    <string name="viernes_largo">Friday</string>
+    <string name="sabado_largo">Saturday</string>
+    <string name="domingo_largo">Sunday</string>
+    <string name="lunes_corto">Mo</string>
+    <string name="martes_corto">Tu</string>
+    <string name="miercoles_corto">We</string>
+    <string name="jueves_corto">Th</string>
+    <string name="viernes_corto">Fr</string>
+    <string name="sabado_corto">Sa</string>
+    <string name="domingo_corto">Su</string>
+    <string name="miligramos_corto">mg</string>
+    <string name="nueva_hora">NEW TIME</string>
+    <string name="cantidad_porcion_en_mg">Dosage amount (In mg)</string>
+    <string name="nota_alarma">Alarm note</string>
+    <string name="guardar">SAVE</string>
+    <string name="apellidos">Surnames</string>
+    <string name="direccion">Address</string>
+    <string name="telefono">Phone number</string>
+    <string name="email">Email</string>
+    <string name="paciente">PATIENT</string>
+    <string name="cuidador">CARER</string>
+    <string name="alarmas">ALARMS</string>
 </resources>

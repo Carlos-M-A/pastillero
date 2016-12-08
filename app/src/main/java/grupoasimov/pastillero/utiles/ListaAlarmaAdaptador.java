@@ -43,10 +43,10 @@ public class ListaAlarmaAdaptador extends ArrayAdapter {
         hora.setText(alarma.getStringHora());
 
         TextView dias = (TextView) item.findViewById(R.id.dias_alarma);
-        dias.setText(alarma.getStringDiasCorto());
+        dias.setText(alarma.getStringDiasCorto(context));
 
         TextView porcion = (TextView) item.findViewById(R.id.porcion_alarma);
-        porcion.setText(Integer.toString(alarma.getCantidadToma()) + " mg");
+        porcion.setText(alarma.getStringPorcion(context));
 
         // Devolvemos la vista para que se muestre en el ListView.
         return item;

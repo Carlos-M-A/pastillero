@@ -41,7 +41,7 @@ public class ListaMedicinaAdaptador extends ArrayAdapter {
         nombre.setText(medicina.getNombre());
 
         TextView porcion = (TextView) item.findViewById(R.id.texto_inferior);
-        porcion.setText(Integer.toString(medicina.getCantidadPorcion()));
+        porcion.setText(medicina.getStringPorcion(context));
 
         ImageView imagen = (ImageView) item.findViewById(R.id.imagen_single_post_circuito);
         imagen.setImageResource(R.mipmap.pastilla);

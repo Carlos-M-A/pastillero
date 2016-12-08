@@ -13,15 +13,48 @@
 
     <!-- Para los titulos de actividades -->
     <string name="title_activity_agregar">Añadir</string>
-    <string name="title_activity_ayuda">Ayuda</string>
+    <string name="title_activity_CrearMedicina">Crear Medicina</string>
+    <string name="title_activity_CrearAlarmas">Crear Alarma</string>
+    <string name="title_activity_MostrarAlarma">Datos Alarma</string>
+    <string name="title_activity_CrearPacienteCuidador">Editar Paciente y Cuidador</string>
+    <string name="title_activity_MostrarPacienteCuidador">Datos Paciente Cuidador</string>
+    <string name="title_activity_MostrarMedicina">Datos Medicina</string>
+    <string name="title_activity_MostrarAyuda">Ayuda</string>
 
     <!-- Para los layouts -->
-    <string name="AyudaText" translatable="false">
+    <string name="AyudaText">
         SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
         El Aburrimiento\r\n\r
         No hablo más...\r\n\r
         Me morí.\r\n\r	</string>
-    <string name="Nombre">Nombre</string>
+
+    <string name="nombre">Nombre</string>
     <string name="descripcion">Descripción</string>
     <string name="Dosis">Dosis</string>
+    <string name="lunes_largo">Lunes</string>
+    <string name="martes_largo">Martes</string>
+    <string name="miercoles_largo">Miércoles</string>
+    <string name="jueves_largo">Jueves</string>
+    <string name="viernes_largo">Viernes</string>
+    <string name="sabado_largo">Sábado</string>
+    <string name="domingo_largo">Domingo</string>
+    <string name="lunes_corto">Lu</string>
+    <string name="martes_corto">Ma</string>
+    <string name="miercoles_corto">Mi</string>
+    <string name="jueves_corto">Ju</string>
+    <string name="viernes_corto">Vi</string>
+    <string name="sabado_corto">Sa</string>
+    <string name="domingo_corto">Do</string>
+    <string name="miligramos_corto">mg</string>
+    <string name="nueva_hora">NUEVA HORA</string>
+    <string name="cantidad_porcion_en_mg">Cantidad porcion (En mg)</string>
+    <string name="nota_alarma">Nota sobre la alarma</string>
+    <string name="guardar">GUARDAR</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="direccion">Direccion</string>
+    <string name="telefono">Telefono</string>
+    <string name="email">Email</string>
+    <string name="paciente">PACIENTE</string>
+    <string name="cuidador">CUIDADOR</string>
+    <string name="alarmas">ALARMAS</string>
 </resources>

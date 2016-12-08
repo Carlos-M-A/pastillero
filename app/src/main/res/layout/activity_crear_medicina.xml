@@ -22,29 +22,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:orientation="horizontal"
+            <ImageButton
+                app:srcCompat="@android:drawable/ic_menu_camera"
+                android:id="@+id/cm_imagen"
+                android:layout_height="150dp"
+                android:layout_width="match_parent" />
+
+            <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageButton
-                    app:srcCompat="@android:drawable/ic_menu_camera"
-                    android:id="@+id/cm_imagen"
-                    android:layout_height="150dp"
-                    android:background="@drawable/boton_redondo"
-                    android:layout_width="150dp" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Name"
-                    android:ems="10"
-                    android:id="@+id/cm_nombre"
-                    android:selectAllOnFocus="true"
-                    android:textAlignment="center"
-                    android:layout_weight="1"
-                    android:inputType="textPersonName" />
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:text="@string/nombre"
+                android:ems="10"
+                android:id="@+id/cm_nombre"
+                android:selectAllOnFocus="true"
+                android:textAlignment="center"
+                android:layout_weight="1"
+                android:inputType="textPersonName" />
 
             <Space
                 android:layout_width="match_parent"
@@ -56,22 +49,22 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:text="Porción de cada dosis (En mg)"
-                    android:layout_width="258dp"
+                    android:text="@string/cantidad_porcion_en_mg"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView8"
-                    android:textAlignment="viewStart" />
+                    android:textAlignment="viewStart"
+                    android:layout_width="200dp" />
 
                 <EditText
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/cm_porcion"
-                    android:text="89"
+                    android:text="100"
                     android:selectAllOnFocus="true"
                     android:textAlignment="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="0.42"
+                    android:layout_width="match_parent" />
             </LinearLayout>
 
             <Space
@@ -83,13 +76,13 @@
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/cm_descripcion"
-                android:text="Descripcion"
-                android:layout_height="98dp"
+                android:text="@string/descripcion"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:selectAllOnFocus="true" />
 
             <Button
-                android:text="GUARDAR"
+                android:text="@string/guardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cm_guardar" />

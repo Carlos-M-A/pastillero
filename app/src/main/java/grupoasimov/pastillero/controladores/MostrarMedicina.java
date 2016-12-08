@@ -104,13 +104,13 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
             case R.id.mm_descripcion:
                 if (mostrar)
-                    descripcion.setText("Descripcion >");
+                    descripcion.setText(getBaseContext().getString(R.string.descripcion)+" >");
                 else
                     descripcion.setText(medicina.getDescripcion());
                 mostrar = !mostrar;
                 break;
             case R.id.mm_texto_alarmas:
-                descripcion.setText("Descripcion >");
+                descripcion.setText(getBaseContext().getString(R.string.descripcion)+" >");
                 mostrar = false;
                 break;
 
@@ -120,7 +120,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        descripcion.setText("Descripcion >");
+        descripcion.setText(getBaseContext().getString(R.string.descripcion) + " >");
         mostrar = false;
         return false;
     }
@@ -138,7 +138,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
     public void actualizaDatos(){
         medicina = Medicina.findById(Medicina.class, medicina.getId());
         nombre.setText(medicina.getNombre());
-        porcion.setText(Integer.toString(medicina.getCantidadPorcion()) + " mg");
+        porcion.setText(medicina.getStringPorcion(getBaseContext()));
         descripcion.setText(medicina.getDescripcion());
         // Obtiene las alarmas de la medicina
         alarmas = Alarma.find(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
