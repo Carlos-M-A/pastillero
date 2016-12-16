@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import grupoasimov.pastillero.Modelo.Medicina;
+import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.ListaMedicinaAdaptador;
 

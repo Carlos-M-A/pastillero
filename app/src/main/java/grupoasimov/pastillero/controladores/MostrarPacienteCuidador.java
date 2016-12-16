@@ -3,15 +3,12 @@ package grupoasimov.pastillero.controladores;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import java.util.List;
-
-import grupoasimov.pastillero.Modelo.Cuidador;
-import grupoasimov.pastillero.Modelo.Paciente;
+import grupoasimov.pastillero.modelo.Cuidador;
+import grupoasimov.pastillero.modelo.Paciente;
 import grupoasimov.pastillero.R;
 
 public class MostrarPacienteCuidador extends AppCompatActivity {

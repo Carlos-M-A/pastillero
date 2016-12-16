@@ -1,16 +1,13 @@
 package grupoasimov.pastillero.controladores;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import grupoasimov.pastillero.Modelo.Cuidador;
-import grupoasimov.pastillero.Modelo.Paciente;
+import grupoasimov.pastillero.modelo.Cuidador;
+import grupoasimov.pastillero.modelo.Paciente;
 import grupoasimov.pastillero.R;
 
 public class CrearPacienteCuidador extends AppCompatActivity implements View.OnClickListener {

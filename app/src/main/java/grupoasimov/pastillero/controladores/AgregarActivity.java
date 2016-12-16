@@ -9,7 +9,10 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import java.io.File;
@@ -18,10 +21,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import grupoasimov.pastillero.R;
 
-public class AgregarActivity extends AppCompatActivity implements View.OnClickListener {
+public class AgregarActivity extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener {
+
     String tag = "TAG";
     static final int REQUEST_IMAGE_CAPTURE = 1;
     String mCurrentPhotoPath;
+    CameraDialog dialogo;
+    EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,12 +36,16 @@ public class AgregarActivity extends AppCompatActivity implements View.OnClickLi
         setSupportActionBar(toolbar);
         ImageButton openImage = (ImageButton)findViewById(R.id.button2) ;
         openImage.setOnClickListener(this);
+        editText = (EditText) findViewById(R.id.editText);
+        editText.setOnTouchListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        CameraDialog dialogo = new CameraDialog();
+        dialogo = new CameraDialog();
         dialogo.show(getFragmentManager(),tag);
+
+        //Log.d("FOTO URI EN AGREGAR", dialogo.getUriFoto().toString());
     }
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -74,5 +84,12 @@ public class AgregarActivity extends AppCompatActivity implements View.OnClickLi
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = image.getAbsolutePath();
         return image;
+    }
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        Log.d("FOTO URI EN AGREGAR", dialogo.getUriFoto().toString());
+
+        return false;
     }
 }

@@ -3,7 +3,6 @@ package grupoasimov.pastillero.controladores;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -14,8 +13,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import grupoasimov.pastillero.Modelo.Alarma;
-import grupoasimov.pastillero.Modelo.Medicina;
+import grupoasimov.pastillero.modelo.Alarma;
+import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.ListaAlarmaAdaptador;
 

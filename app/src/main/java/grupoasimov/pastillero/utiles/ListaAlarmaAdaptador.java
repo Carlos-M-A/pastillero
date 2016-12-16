@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import grupoasimov.pastillero.Modelo.Alarma;
+import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.R;
 
 
@@ -36,7 +36,6 @@ public class ListaAlarmaAdaptador extends ArrayAdapter {
         // Inflamos la vista
         LayoutInflater inflater = LayoutInflater.from(context);
         View item = inflater.inflate(R.layout.fila_alarma, null);
-
         Alarma alarma = objects.get(position);
 
         TextView hora = (TextView) item.findViewById(R.id.hora_alarma);

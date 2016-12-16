@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import grupoasimov.pastillero.Modelo.Medicina;
+import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 
 /**

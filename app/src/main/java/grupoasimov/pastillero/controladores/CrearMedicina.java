@@ -1,6 +1,5 @@
 package grupoasimov.pastillero.controladores;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import grupoasimov.pastillero.Modelo.Medicina;
+import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 
 public class CrearMedicina extends AppCompatActivity implements View.OnClickListener {

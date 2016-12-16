@@ -3,12 +3,11 @@ package grupoasimov.pastillero.controladores;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import grupoasimov.pastillero.Modelo.Alarma;
+import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.R;
 
 public class MostrarAlarma extends AppCompatActivity {

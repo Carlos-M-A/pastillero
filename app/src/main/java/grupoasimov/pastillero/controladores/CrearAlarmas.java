@@ -1,5 +1,7 @@
 package grupoasimov.pastillero.controladores;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,9 +16,11 @@ import android.widget.TimePicker;
 
 import java.util.ArrayList;
 
-import grupoasimov.pastillero.Modelo.Alarma;
-import grupoasimov.pastillero.Modelo.Medicina;
+import grupoasimov.pastillero.modelo.Alarma;
+import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
+import grupoasimov.pastillero.recibidores.AvisoDeAlarma;
+import grupoasimov.pastillero.recibidores.EncendidoDelTelefono;
 
 public class CrearAlarmas extends AppCompatActivity implements View.OnClickListener {
 
@@ -120,10 +124,17 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     alarma.setMinuto(hora.getCurrentMinute());
 
                     alarma.save();
+
+                    activarAlarma(alarma);
                 }
                 finish();
                 break;
         }
 
+    }
+
+    private void activarAlarma(Alarma alarma){
+        EncendidoDelTelefono encendidoDelTelefono = new EncendidoDelTelefono();
+        //encendidoDelTelefono.actualizarAlarmas(this);
     }
 }
