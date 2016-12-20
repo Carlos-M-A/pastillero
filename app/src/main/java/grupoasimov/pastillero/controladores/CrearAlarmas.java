@@ -2,6 +2,7 @@ package grupoasimov.pastillero.controladores;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,8 +20,7 @@ import java.util.ArrayList;
 import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
-import grupoasimov.pastillero.recibidores.AvisoDeAlarma;
-import grupoasimov.pastillero.recibidores.EncendidoDelTelefono;
+import grupoasimov.pastillero.recibidores.AvisoActualizarAlarmas;
 
 public class CrearAlarmas extends AppCompatActivity implements View.OnClickListener {
 
@@ -125,7 +125,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
                     alarma.save();
 
-                    activarAlarma(alarma);
+                    activarAlarma();
                 }
                 finish();
                 break;
@@ -133,8 +133,13 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void activarAlarma(Alarma alarma){
-        EncendidoDelTelefono encendidoDelTelefono = new EncendidoDelTelefono();
-        //encendidoDelTelefono.actualizarAlarmas(this);
+    private void activarAlarma(){
+        //Programamos la llamada para la siguiente actualizacion
+        Context context = getBaseContext();
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
+        Intent intent2 = new Intent(context, AvisoActualizarAlarmas.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                context.getApplicationContext(), 234324243, intent2, 0);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 2*1000, pendingIntent);
     }
 }

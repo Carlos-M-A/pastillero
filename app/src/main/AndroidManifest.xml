@@ -76,7 +76,7 @@
         </provider>
 
         <receiver
-            android:name=".recibidores.EncendidoDelTelefono"
+            android:name=".recibidores.AvisoActualizarAlarmas"
             android:enabled="true"
             android:exported="true">
             <intent-filter>

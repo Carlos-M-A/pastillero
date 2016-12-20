@@ -4,6 +4,8 @@ import android.content.Context;
 
 import com.orm.SugarRecord;
 
+import java.util.Calendar;
+
 import grupoasimov.pastillero.R;
 
 /**
@@ -206,5 +208,59 @@ public class Alarma extends SugarRecord{
 
     public String getStringPorcion(Context context){
         return Integer.toString(cantidadToma) + context.getString(R.string.miligramos_corto);
+    }
+
+    /**
+     * Devuelve si la alarma es hoy
+     * @return
+     */
+    public boolean esHoy(){
+        Calendar ahora = Calendar.getInstance();
+        boolean diaActivo = false;
+        switch (ahora.get(Calendar.DAY_OF_WEEK)){
+            case Calendar.MONDAY:
+                diaActivo = isLunes();
+                break;
+            case Calendar.TUESDAY:
+                diaActivo = isMartes();
+                break;
+            case Calendar.WEDNESDAY:
+                diaActivo = isMiercoles();
+                break;
+            case Calendar.THURSDAY:
+                diaActivo = isJueves();
+                break;
+            case Calendar.FRIDAY:
+                diaActivo = isViernes();
+                break;
+            case Calendar.SATURDAY:
+                diaActivo = isSabado();
+                break;
+            case Calendar.SUNDAY:
+                diaActivo = isDomingo();
+                break;
+        }
+        return diaActivo;
+    }
+    /**
+     * Devuelve si debe ser activada o no en el dia de hoy
+     * @return
+     */
+    public boolean debeSerActivada(){
+        boolean diaActivo = esHoy(); //Si la alarma debe ser activada este dia
+        boolean activoHoy; // Si en el dia de hoy la alarma sigue activa
+
+        Calendar ahora = Calendar.getInstance();
+
+        Calendar alarma = Calendar.getInstance();
+        alarma.set(Calendar.HOUR_OF_DAY, getHora());
+        alarma.set(Calendar.MINUTE, getMinuto());
+        alarma.set(Calendar.SECOND, 0);
+        alarma.set(Calendar.MILLISECOND, 0);
+
+        activoHoy = alarma.after(ahora);
+
+        return (diaActivo && activoHoy);
+
     }
 }

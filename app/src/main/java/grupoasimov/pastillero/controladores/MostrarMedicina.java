@@ -88,6 +88,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
                 return true;
 
             case R.id.menu_medicina_borrar:
+                Alarma.deleteAll(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
                 medicina.delete();
                 finish();
                 return true;
