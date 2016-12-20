@@ -142,4 +142,6 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                 context.getApplicationContext(), 234324243, intent2, 0);
         alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + 2*1000, pendingIntent);
     }
+
+
 }
