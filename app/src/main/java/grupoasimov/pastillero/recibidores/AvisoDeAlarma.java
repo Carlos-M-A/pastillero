@@ -9,10 +9,12 @@ import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import grupoasimov.pastillero.R;
+import grupoasimov.pastillero.controladores.AlarmaDeMedicinas;
 import grupoasimov.pastillero.controladores.MostrarListaMedicinas;
 import grupoasimov.pastillero.modelo.Alarma;
 
@@ -31,7 +33,7 @@ public class AvisoDeAlarma extends BroadcastReceiver {
         Calendar ahora = Calendar.getInstance();
         Log.d("Hay una alarma ahora", ahora.toString());
 
-        List<Alarma> alarmas = Alarma.find(Alarma.class, "hora = ? AND minuto = ?", Integer.toString(ahora.get(Calendar.HOUR_OF_DAY))
+        ArrayList<Alarma> alarmas = (ArrayList<Alarma>) Alarma.find(Alarma.class, "hora = ? AND minuto = ?", Integer.toString(ahora.get(Calendar.HOUR_OF_DAY))
                 , Integer.toString(ahora.get(Calendar.MINUTE)));
         for (Alarma alarma : alarmas) {
             if (!alarma.esHoy())
@@ -51,8 +53,9 @@ public class AvisoDeAlarma extends BroadcastReceiver {
         }
         mBuilder.setContentText(text);
 
-        Intent resultIntent = new Intent(context, MostrarListaMedicinas.class);
-        //resultIntent.putExtra("alarmas", alarmas);
+        Intent resultIntent = new Intent(context, AlarmaDeMedicinas.class);
+
+        resultIntent.putExtra("alarmas", alarmas);
 
 // Because clicking the notification opens a new ("special") activity, there's
 // no need to create an artificial back stack.

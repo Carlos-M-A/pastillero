@@ -5,13 +5,15 @@ import android.content.Context;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
+
 import grupoasimov.pastillero.R;
 
 /**
  * Created by ferreri on 15/11/16.
  */
 
-public class Medicina extends SugarRecord {
+public class Medicina extends SugarRecord implements Serializable {
     private String nombre;
     private String descripcion;
     private int cantidadPorcion; // en miligramos

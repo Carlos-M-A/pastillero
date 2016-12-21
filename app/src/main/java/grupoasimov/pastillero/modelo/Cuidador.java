@@ -2,11 +2,13 @@ package grupoasimov.pastillero.modelo;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
+
 /**
  * Created by ferreri on 1/12/16.
  */
 
-public class Cuidador extends SugarRecord {
+public class Cuidador extends SugarRecord implements Serializable{
 
     private String nombre;
     private String apellidos;

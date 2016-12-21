@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 import grupoasimov.pastillero.R;
@@ -12,7 +13,7 @@ import grupoasimov.pastillero.R;
  * Created by ferreri on 15/11/16.
  */
 
-public class Alarma extends SugarRecord{
+public class Alarma extends SugarRecord implements Serializable{
 
     private Medicina medicina;
 

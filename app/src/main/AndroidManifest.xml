@@ -86,7 +86,9 @@
         <receiver
             android:name=".recibidores.AvisoDeAlarma"
             android:enabled="true"
-            android:exported="true"></receiver>
+            android:exported="true" />
+
+        <activity android:name=".controladores.AlarmaDeMedicinas"></activity>
     </application>
 
 </manifest>

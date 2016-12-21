@@ -2,6 +2,7 @@ package grupoasimov.pastillero.modelo;
 
 import com.orm.SugarRecord;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 
@@ -9,7 +10,7 @@ import java.util.Calendar;
  * Created by ferreri on 15/11/16.
  */
 
-public class Notificacion extends SugarRecord {
+public class Notificacion extends SugarRecord implements Serializable{
     private Alarma alarma;
     private Calendar fecha;
     private boolean notificado;
