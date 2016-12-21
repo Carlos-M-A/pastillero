@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.R;
+import grupoasimov.pastillero.utiles.GestorAlarmas;
 
 public class MostrarAlarma extends AppCompatActivity {
 
@@ -54,6 +55,7 @@ public class MostrarAlarma extends AppCompatActivity {
 
             case R.id.menu_alarma_borrar:
                 alarma.delete();
+                GestorAlarmas.activarAlarma(getBaseContext());
                 finish();
                 return true;
 

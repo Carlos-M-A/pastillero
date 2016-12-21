@@ -16,6 +16,7 @@ import java.util.List;
 import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
+import grupoasimov.pastillero.utiles.GestorAlarmas;
 import grupoasimov.pastillero.utiles.ListaAlarmaAdaptador;
 
 public class MostrarMedicina extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener, AdapterView.OnItemClickListener {
@@ -90,13 +91,13 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
             case R.id.menu_medicina_borrar:
                 Alarma.deleteAll(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
                 medicina.delete();
+                GestorAlarmas.activarAlarma(getBaseContext());
                 finish();
                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 
     @Override
