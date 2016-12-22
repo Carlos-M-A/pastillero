@@ -9,10 +9,13 @@ import java.util.Calendar;
 
 import grupoasimov.pastillero.R;
 
-/**
- *
- */
 
+/**
+ * Alarma asignada a una medicina.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class Alarma extends SugarRecord implements Serializable{
 
     private Medicina medicina;
@@ -153,6 +156,10 @@ public class Alarma extends SugarRecord implements Serializable{
                 '}';
     }
 
+    /**
+     * Devuelve la hora en forma de cadena de texto y con formato 24 horas
+     * @return Hora de la alarma en formato 24h
+     */
     public String getStringHora(){
         String horaString = "";
         horaString = horaString + Integer.toString(hora) + ":";
@@ -162,6 +169,12 @@ public class Alarma extends SugarRecord implements Serializable{
         return horaString;
     }
 
+    /**
+     * Devuelve un String con los dias en los que la alarma esta activa, con los dias
+     * en formato corto.
+     * @param context contexto necesario para obtener los string para internacionalizacion
+     * @return La cadena con los dias
+     */
     public String getStringDiasCorto(Context context){
 
         String cadenaDias = "";
@@ -176,6 +189,12 @@ public class Alarma extends SugarRecord implements Serializable{
         return cadenaDias;
     }
 
+    /**
+     * Devuelve un String con los dias en los que la alarma esta activa, con los dias
+     * en formato largo.
+     * @param context contexto necesario para obtener los string para internacionalizacion
+     * @return La cadena con los dias
+     */
     public String getStringDiasLargo(Context context){
         String cadenaDias = "";
             if (isLunes()) cadenaDias = cadenaDias + " " + context.getString(R.string.lunes_largo);
@@ -189,13 +208,18 @@ public class Alarma extends SugarRecord implements Serializable{
         return cadenaDias;
     }
 
+    /**
+     * Devuelve la cantidad de porcion en mg en forma de cadena de texto
+     * @param context contexto necesario para obtener los string para internacionalizacion
+     * @return Porcion en cadena de texto.
+     */
     public String getStringPorcion(Context context){
         return Integer.toString(cantidadToma) + context.getString(R.string.miligramos_corto);
     }
 
     /**
-     * Devuelve si la alarma es hoy
-     * @return
+     * Devuelve si la alarma esta activada hoy
+     * @return <code>true</code> si esta activada
      */
     public boolean esHoy(){
         Calendar ahora = Calendar.getInstance();
@@ -226,8 +250,9 @@ public class Alarma extends SugarRecord implements Serializable{
         return diaActivo;
     }
     /**
-     * Devuelve si debe ser activada o no en el dia de hoy
-     * @return
+     * Devuelve si debe ser activada o no en la hora actual. Es decir, si es una alarma activada
+     * en el dia de hoy y si en la hora que es todavia sigue activa.
+     * @return <code>true</code> si esta activada
      */
     public boolean debeSerActivada(){
         boolean diaActivo = esHoy(); //Si la alarma debe ser activada este dia

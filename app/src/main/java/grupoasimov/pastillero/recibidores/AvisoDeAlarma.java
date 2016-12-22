@@ -18,6 +18,13 @@ import grupoasimov.pastillero.modelo.Alarma;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 
+/**
+ * Este recibidor se activa cuando es la hora de una alarma, es decir, que se debe una tomar una
+ * medicina el paciente.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class AvisoDeAlarma extends BroadcastReceiver {
     ArrayList<Alarma> alarmas;
     Calendar ahora;
@@ -42,6 +49,10 @@ public class AvisoDeAlarma extends BroadcastReceiver {
 
     }
 
+    /**
+     * Se crea una notificacion para mostrar al usuario que hay medicinas a tomar.
+     * @param context contexto de la aplicacion
+     */
     public void creaNotificacion(Context context){
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context);

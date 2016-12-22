@@ -18,14 +18,17 @@ import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 
 /**
- * Created by ferreri on 6/12/16.
+ * Usado por el ListView de MostrarListasMedicinas para mostrar una lista de medicinas.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
 
 public class ListaMedicinaAdaptador extends ArrayAdapter {
-    Context context;
-    List<Medicina> objects;
+    private final Context context;
+    private final List<Medicina> objects;
 
-    public ListaMedicinaAdaptador(Context context, List objects) {
+    public ListaMedicinaAdaptador(Context context, List<Medicina> objects) {
         super(context, R.layout.fila_medicina, objects);
         this.context = context;
         this.objects = objects;
@@ -51,9 +54,7 @@ public class ListaMedicinaAdaptador extends ArrayAdapter {
             Drawable imagenMet = Drawable.createFromPath(medicina.getUrlImagen());
             Bitmap imagenBitMap = ((BitmapDrawable) imagenMet).getBitmap();
             imagen.setImageBitmap(imagenBitMap);
-            //imagen.setImageDrawable(imagenMet);
         }
-        // Devolvemos la vista para que se muestre en el ListView.
         return item;
     }
 }

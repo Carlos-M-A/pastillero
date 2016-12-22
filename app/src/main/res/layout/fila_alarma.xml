@@ -13,7 +13,7 @@
         android:padding="5dp" >
 
         <TextView
-            android:text="HORA"
+            android:text=""
             android:layout_width="109dp"
             android:layout_height="wrap_content"
             android:id="@+id/hora_alarma"
@@ -23,19 +23,19 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <TextView
-                android:text="Dias"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/dias_alarma"
                 android:layout_weight="1" />
 
             <TextView
-                android:text="Porcion"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/porcion_alarma"

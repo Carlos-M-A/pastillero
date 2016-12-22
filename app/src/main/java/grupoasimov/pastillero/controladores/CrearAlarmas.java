@@ -18,6 +18,12 @@ import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.GestorAlarmas;
 
+/**
+ * Actividad para crear alarmas , te muestras los dias y hora
+ *  @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class CrearAlarmas extends AppCompatActivity implements View.OnClickListener {
 
     TextView nombreMedicina;
@@ -37,6 +43,10 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
     Medicina medicina;
 
+    /**
+     * Inicializamos los componentes de la vista
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +79,11 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
         nombreMedicina.setText(medicina.getNombre());
     }
 
+    /**
+     * Caso Nueva hora , añade otro timePicker para añadir mas horas a la alarma
+     * Caso guardar, guarda toda la información relativa a la alarma
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()){

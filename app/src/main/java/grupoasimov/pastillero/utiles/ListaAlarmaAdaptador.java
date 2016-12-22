@@ -15,14 +15,15 @@ import grupoasimov.pastillero.R;
 
 
 /**
- * Created by ferreri on 29/11/16.
+ * Usado por la ListView de MostrarMedicina, para hacer una lista de alarmas.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
-
-//http://www.proyectosimio.com/es/programacion-android-listview-adapter-personalizado-i/
 public class ListaAlarmaAdaptador extends ArrayAdapter {
 
-    private Context context;
-    private List<Alarma> objects;
+    private final Context context;
+    private final List<Alarma> objects;
 
     public ListaAlarmaAdaptador(Context context, List<Alarma> objects) {
         super(context, R.layout.fila_alarma, objects);

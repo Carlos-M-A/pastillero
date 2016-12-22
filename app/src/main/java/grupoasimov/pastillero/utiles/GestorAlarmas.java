@@ -10,15 +10,22 @@ import grupoasimov.pastillero.recibidores.AvisoActualizarAlarmas;
 import static android.content.Context.ALARM_SERVICE;
 
 /**
- * Created by ferreri on 21/12/16.
+ * Gestiona la actualizacion de las alarmas.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
-
 public class GestorAlarmas {
 
     public GestorAlarmas(){
 
         }
 
+    /**
+     * Hace que despues de 2 segundos se llame a AvisoActualizarAlarmas para que actualice todas
+     * las alarmas.
+     * @param context contexto de la aplicacion
+     */
     public static void activarAlarma(Context context){
         //Programamos la llamada para la siguiente actualizacion
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);

@@ -21,6 +21,12 @@ import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.GestorAlarmas;
 import grupoasimov.pastillero.utiles.ListaAlarmaAdaptador;
 
+/**
+ * Muestra los datos de una medicina y sus alarmas asociadas.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class MostrarMedicina extends AppCompatActivity implements View.OnClickListener, View.OnTouchListener, AdapterView.OnItemClickListener {
 
     TextView descripcion;
@@ -109,14 +115,19 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.mm_descripcion:
-                if (mostrar)
-                    descripcion.setText(getBaseContext().getString(R.string.descripcion)+" >");
+                if (mostrar) {
+                    String texto = getBaseContext().getString(R.string.descripcion);
+                    texto = texto + " >";
+                    descripcion.setText(texto);
+                }
                 else
                     descripcion.setText(medicina.getDescripcion());
                 mostrar = !mostrar;
                 break;
             case R.id.mm_texto_alarmas:
-                descripcion.setText(getBaseContext().getString(R.string.descripcion)+" >");
+                String texto = getBaseContext().getString(R.string.descripcion);
+                texto = texto + " >";
+                descripcion.setText(texto);
                 mostrar = false;
                 break;
 
@@ -126,7 +137,9 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        descripcion.setText(getBaseContext().getString(R.string.descripcion) + " >");
+        String texto = getBaseContext().getString(R.string.descripcion);
+        texto = texto + " >";
+        descripcion.setText(texto);
         mostrar = false;
         return false;
     }
@@ -141,6 +154,9 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         startActivity(i);
     }
 
+    /**
+     * Actualiza los datos de la vista.
+     */
     public void actualizaDatos(){
         medicina = Medicina.findById(Medicina.class, medicina.getId());
         nombre.setText(medicina.getNombre());

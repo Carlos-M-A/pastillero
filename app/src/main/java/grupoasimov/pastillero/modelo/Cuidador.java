@@ -5,9 +5,11 @@ import com.orm.SugarRecord;
 import java.io.Serializable;
 
 /**
- * Created by ferreri on 1/12/16.
+ * Cuidador que quiere ser notificado por los sucesos del usuario(paciente) con la aplicación.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
-
 public class Cuidador extends SugarRecord implements Serializable{
 
     private String nombre;

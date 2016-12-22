@@ -42,7 +42,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/adm_porcion_alarma"
@@ -55,7 +55,7 @@
                 android:layout_height="40dp" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/adm_nombre_medicina"
@@ -89,7 +89,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/adm_nota_alarma"

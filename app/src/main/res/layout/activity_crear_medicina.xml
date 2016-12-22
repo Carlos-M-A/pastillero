@@ -30,7 +30,7 @@
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
 
                 android:ems="10"
                 android:id="@+id/cm_nombre"
@@ -64,8 +64,8 @@
                     android:selectAllOnFocus="true"
                     android:textAlignment="center"
                     android:layout_weight="0.42"
-                    android:layout_width="match_parent"
-                    android:hint="100" />
+                    android:layout_width="0dp"
+                    android:hint="@string/mg_por_defecto" />
             </LinearLayout>
 
             <Space

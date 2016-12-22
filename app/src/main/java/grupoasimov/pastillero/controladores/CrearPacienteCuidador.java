@@ -10,6 +10,13 @@ import grupoasimov.pastillero.modelo.Cuidador;
 import grupoasimov.pastillero.modelo.Paciente;
 import grupoasimov.pastillero.R;
 
+/**
+ * Actividad que muestra los datos del paciente y el cuidador
+ * Tambíen se utiliza para editar los datos
+ *  @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class CrearPacienteCuidador extends AppCompatActivity implements View.OnClickListener {
 
     EditText nombrePaciente;
@@ -27,6 +34,11 @@ public class CrearPacienteCuidador extends AppCompatActivity implements View.OnC
     Paciente paciente;
     Cuidador cuidador;
 
+    /**
+     *Actualiza la vista, si no existe la información del paciente o cuidador se crea
+     * Si no se muestra
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +81,10 @@ public class CrearPacienteCuidador extends AppCompatActivity implements View.OnC
 
     }
 
+    /**
+     * Recoge la información de todos los campos y crea el Paciente y el Cuidador en la base de datos
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         String nombreP = getString(R.string.nombre);

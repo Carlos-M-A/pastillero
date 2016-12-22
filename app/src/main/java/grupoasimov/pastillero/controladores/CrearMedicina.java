@@ -19,13 +19,18 @@ import android.widget.ImageButton;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 
+/**
+ * Actividad para crear las medicinas
+ *  @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class CrearMedicina extends AppCompatActivity implements View.OnClickListener {
 
     EditText nombreMedicina;
@@ -42,9 +47,13 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
     Medicina medicina;
 
-    String TAG = "--En CREAR MEDICINA--";
+    final String TAG = "--En CREAR MEDICINA--";
 
 
+    /**
+     * Se inicializa la vista
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,12 +76,19 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         actualizaVista();
     }
 
+    /**
+     * Obtiene la medicina del intent, y en caso de ya existir la obtiene de la base de datos
+     */
     private void actualizaMedicina(){
         medicina = (Medicina)getIntent().getSerializableExtra("medicina");
         if(getIntent().getBooleanExtra("actualizar", true))
             medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
         Log.d(TAG, "id medicina: " + medicina.getId());
     }
+
+    /**
+     * Actualiza la vista de esta actividad tras si se llama después de un cambio
+     */
     private void actualizaVista(){
         if(medicina.getNombre().length()!=0)
             nombreMedicina.setText(medicina.getNombre());
@@ -114,9 +130,13 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
         if(medicina!=null && medicina.getUrlImagen()==null)
             medicina.setUrlImagen("nulo");
-        Log.d(TAG, medicina.getUrlImagen());
     }
 
+    /**
+     * Caso guardar medicina en la base de datos
+     * Caso imagen que llama a la camara y crea la fotografia
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -155,9 +175,10 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
      */
     private File createImageFile() throws IOException {
         // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        //String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String timeStamp = String.valueOf((int)Calendar.getInstance().getTimeInMillis());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getAlbumStorageDir(getApplication(),"pillPhotoAlbum");
+        File storageDir = getAlbumStorageDir(getApplication());
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
@@ -172,11 +193,11 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
     /**
      *
      * @param context de la aplicacion , necesario para obtener el directorio
-     * @param albumName el nombre que tendra el album de fotos
      * @return el directorio donde se guardaran las fotos
      */
-    public File getAlbumStorageDir(Context context, String albumName) {
+    public File getAlbumStorageDir(Context context) {
         // Get the directory for the app's private pictures directory.
+        String albumName = "pillPhotoAlbum";
         File file = new File(context.getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES), albumName);
         if (!file.mkdirs()) {
@@ -223,6 +244,13 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         }
 
     }
+
+    /**
+     * Una vez hecha la foto se pone como fondo en el ImageButton que llama al intent de camara
+     * @param requestCode REQUEST_TAKE_PHOTO
+     * @param resultCode RESULT_OK
+     * @param data Intent que llamo a la camara
+     */
     @Override
     protected void onActivityResult(int requestCode,int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);

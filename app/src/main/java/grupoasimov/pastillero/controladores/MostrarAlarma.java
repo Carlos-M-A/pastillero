@@ -11,6 +11,12 @@ import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.GestorAlarmas;
 
+/**
+ * Actividad para mostrar una alarma cuando la seleccionas desde una medicina
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class MostrarAlarma extends AppCompatActivity {
 
     Alarma alarma;
@@ -21,6 +27,10 @@ public class MostrarAlarma extends AppCompatActivity {
     TextView porcionAlarmaA;
     TextView notaAlarmaA;
 
+    /**
+     * Inicializas la vista , rellenando los campos con la infrmación de la alarma
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +52,11 @@ public class MostrarAlarma extends AppCompatActivity {
         notaAlarmaA.setText(alarma.getNota());
     }
 
+    /**
+     * Inflamos el menu
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -49,6 +64,11 @@ public class MostrarAlarma extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Acciones para las opciones del menu
+     * @param item seleccionado del menu
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

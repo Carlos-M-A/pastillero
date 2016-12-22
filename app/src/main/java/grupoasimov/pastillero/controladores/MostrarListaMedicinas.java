@@ -15,6 +15,14 @@ import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.utiles.ListaMedicinaAdaptador;
 
+/**
+ * Actividad inicial de la aplicacion. Muestra una lista con todas las medicinas que fueron
+ * introducidas. Para que la aplicacion funcione al instalarla desde Android Studio hay que
+ * desactivar el Instant Run (File > Settings > Build, Execution,.. > Instant Run).
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class MostrarListaMedicinas extends AppCompatActivity  implements AdapterView.OnItemClickListener{
 
     List<Medicina> medicinas;

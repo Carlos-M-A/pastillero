@@ -5,7 +5,6 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 
 import java.util.Calendar;
 import java.util.List;
@@ -14,6 +13,14 @@ import grupoasimov.pastillero.modelo.Alarma;
 
 import static android.content.Context.ALARM_SERVICE;
 
+/**
+ * Este recibidor se activa cuando es necesario actualizar las alarmas que estan activadas en el
+ * sistema android. Se activa cuando se enciende el telefono, cuando son las 00:00:30 de cualquier
+ * dia o cuando se crean o borran alarmas en la aplicacion.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class AvisoActualizarAlarmas extends BroadcastReceiver {
 
     public static boolean programadoAMediaNoche = false;
@@ -22,20 +29,23 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        // TODO: This method is called when the BroadcastReceiver is receiving
-        // an Intent broadcast.
 
         actualizarAlarmas(context);
 
 
         Calendar ahora = Calendar.getInstance();
-        if(!programadoAMediaNoche || ((int)ahora.get(Calendar.MINUTE)==0 && (int)ahora.get(Calendar.HOUR_OF_DAY)==0
-                                        && (int)ahora.get(Calendar.SECOND)==30))
+        if(!programadoAMediaNoche || (int)ahora.get(Calendar.MINUTE)==0 && (int)ahora.get(Calendar.HOUR_OF_DAY)==0
+                                        && (int)ahora.get(Calendar.SECOND)==30)
             programaSiguienteActualizacionAlarmas(context);
 
 
     }
 
+    /**
+     * Actualiza las alarmas, es decir, notifica al sistema operativo android que alarmas deben ser
+     * activadas y cuales canceladas.
+     * @param context contexto de llamada
+     */
     public void actualizarAlarmas(Context context){
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
 
@@ -49,13 +59,7 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
 
 
         for(Alarma alarma: alarmas){
-            Calendar alarmaCalendarBORRAR = Calendar.getInstance();
-            alarmaCalendarBORRAR.set(Calendar.HOUR_OF_DAY, alarma.getHora());
-            alarmaCalendarBORRAR.set(Calendar.MINUTE, alarma.getMinuto());
-            alarmaCalendarBORRAR.set(Calendar.SECOND, 0);
-            alarmaCalendarBORRAR.set(Calendar.MILLISECOND, 0);
             if(alarma.debeSerActivada()) {
-
                 Calendar alarmaCalendar = Calendar.getInstance();
                 alarmaCalendar.set(Calendar.HOUR_OF_DAY, alarma.getHora());
                 alarmaCalendar.set(Calendar.MINUTE, alarma.getMinuto());
@@ -71,6 +75,10 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
 
     }
 
+    /**
+     * Programa una llamada a este recibidor a las 00:00:30 del dia siguiente.
+     * @param context contexto de llamada
+     */
     public void programaSiguienteActualizacionAlarmas(Context context){
 
         //Si guiente llamada a las 00:00:30 del proximo dia, como tarde

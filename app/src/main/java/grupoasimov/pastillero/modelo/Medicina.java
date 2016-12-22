@@ -10,9 +10,11 @@ import java.io.Serializable;
 import grupoasimov.pastillero.R;
 
 /**
- *
+ * Medicina a tomar por el usuario.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
-
 public class Medicina extends SugarRecord implements Serializable {
     private String nombre;
     private String descripcion;

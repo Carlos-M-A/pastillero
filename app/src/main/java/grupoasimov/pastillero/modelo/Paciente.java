@@ -5,7 +5,10 @@ import com.orm.SugarRecord;
 import java.io.Serializable;
 
 /**
- * Created by ferreri on 1/12/16.
+ * Paciente que es el usuario de la aplicación y que recibe las alarmas.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
 
 public class Paciente extends SugarRecord implements Serializable{

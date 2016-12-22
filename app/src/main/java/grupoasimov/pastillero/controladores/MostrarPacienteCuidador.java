@@ -11,6 +11,12 @@ import grupoasimov.pastillero.modelo.Cuidador;
 import grupoasimov.pastillero.modelo.Paciente;
 import grupoasimov.pastillero.R;
 
+/**
+ * Controla la vista del paciente y cuidador.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class MostrarPacienteCuidador extends AppCompatActivity {
 
     TextView nombrePaciente;
@@ -82,6 +88,9 @@ public class MostrarPacienteCuidador extends AppCompatActivity {
         }
     }
 
+    /**
+     * Actualiza los datos de la vista.
+     */
     public void actualizaDatos(){
         if(Paciente.listAll(Paciente.class).size()==0) {
             hayDatos = false;

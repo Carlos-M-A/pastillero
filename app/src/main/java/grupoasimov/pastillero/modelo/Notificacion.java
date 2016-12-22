@@ -7,7 +7,10 @@ import java.util.Calendar;
 
 
 /**
- * 
+ * Notificaciones guardadas que deben ser enviadas al Cuidador.
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
  */
 
 public class Notificacion extends SugarRecord implements Serializable{
@@ -18,11 +21,6 @@ public class Notificacion extends SugarRecord implements Serializable{
     public Notificacion() {
     }
 
-    public Notificacion(Alarma alarma, Calendar fecha) {
-        this.alarma = alarma;
-        this.fecha = fecha;
-        this.notificado = false;
-    }
 
     public Alarma getAlarma() {
         return alarma;

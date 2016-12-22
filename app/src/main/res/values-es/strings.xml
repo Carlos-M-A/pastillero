@@ -56,6 +56,7 @@
     <string name="debes_tomar">Debes tomar</string>
     <string name="medicinas">medicinas</string>
     <string name="tomado">LO HE TOMADO</string>
+    <string name="mg_por_defecto">100</string>
 
        <string name="AyudaText">
         Pappstillero\r\n

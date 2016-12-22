@@ -22,7 +22,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ma_nombre_medicina"
@@ -34,7 +34,7 @@
                 android:layout_height="40dp" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ma_hora"
@@ -44,7 +44,7 @@
                 android:textColor="@android:color/holo_red_dark" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ma_dias"
@@ -57,7 +57,7 @@
                 android:layout_height="30dp" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ma_porcion"
@@ -69,7 +69,7 @@
                 android:layout_height="20dp" />
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/ma_nota"

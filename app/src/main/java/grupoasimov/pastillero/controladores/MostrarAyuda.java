@@ -5,6 +5,13 @@ import android.os.Bundle;
 
 import grupoasimov.pastillero.R;
 
+
+/**
+ * Muestra las instrucciones de uso de la aplicacion
+ * @author Adrián Serrano
+ * @author Carlos Martín
+ * @author María Varela
+ */
 public class MostrarAyuda extends AppCompatActivity {
 
     @Override
