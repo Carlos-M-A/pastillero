@@ -10,6 +10,7 @@ package grupoasimov.pastillero.controladores;
         import android.content.Intent;
         import android.content.pm.PackageManager;
         import android.content.pm.ResolveInfo;
+        import android.graphics.Camera;
         import android.net.Uri;
         import android.nfc.Tag;
         import android.os.Bundle;
@@ -31,10 +32,12 @@ public class CameraDialog extends DialogFragment {
 
     static final int REQUEST_TAKE_PHOTO = 1;
     private static final String LOG_TAG ="LOG" ;
-    String TAG = "TAG";
+    String TAG = "--En CameraDialog--";
     String rutaFotoActual;
     String fotoUri;
     String MY_VALUE="mi valor";
+    Medicina medicina;
+
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -47,8 +50,6 @@ public class CameraDialog extends DialogFragment {
                 .setPositiveButton("Cámara", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        // Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                        //startActivityForResult(cameraIntent, REQUEST_TAKE_PHOTO);
                         dispatchTakePictureIntent();
 
 
@@ -136,23 +137,32 @@ public class CameraDialog extends DialogFragment {
             }
 
             fotoUri = photoURI.toString();
-            String hola = "HOLA ESTOY PROBANDO";
             Log.d(TAG,fotoUri+"EEEEEEEEEEEEEEEEEEEEEE");
             takePictureIntent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, photoURI);
-            // takePictureIntent.putExtra("rutaFotoActual",hola);
 
+            //no se si vale para algo esto
+            medicina.setUrlImagen(rutaFotoActual);
 
             getActivity().startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
             Log.d(TAG,"HE LLEGADO HASTA EL FINAL DEL METODO INTENT CAMERA");
-            Medicina medicina = new Medicina();
-            medicina.setNombre("nombre1");
-            medicina.setCantidadPorcion(23);
-            medicina.setDescripcion("sfg");
+
+            Log.d("Camera dialog url", rutaFotoActual);
+            //getActivity().getIntent().putExtra("url", rutaFotoActual);
+
+            //Medicina medicina = new Medicina();
+            //medicina.setNombre("nombre1");
+            //medicina.setCantidadPorcion(23);
+            //medicina.setDescripcion("sfg");
             medicina.setUrlImagen(rutaFotoActual);
-            medicina.save();
+            //medicina.save();
+
         }
 
     }
 
+    public void setMedicina(Medicina medicina) {
+        this.medicina = medicina;
+        Log.d(TAG, this.medicina.toString());
+    }
 }
 

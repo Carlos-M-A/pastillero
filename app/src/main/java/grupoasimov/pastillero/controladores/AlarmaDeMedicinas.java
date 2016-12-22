@@ -30,6 +30,8 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarma_de_medicinas);
 
+        Log.d("ALARMA DE MEDICINAS", "En el principio");
+
         imagenMedicina = (ImageView) findViewById(R.id.adm_imagen_medicina);
         nombreMedicina = (TextView) findViewById(R.id.adm_nombre_medicina);
         porcionAlarma = (TextView) findViewById(R.id.adm_porcion_alarma);

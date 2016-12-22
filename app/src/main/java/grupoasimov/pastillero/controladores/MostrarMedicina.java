@@ -1,6 +1,7 @@
 package grupoasimov.pastillero.controladores;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
     TextView alarmasEtiqueta;
     TextView nombre;
     TextView porcion;
+    ImageView imagenMedicina;
 
     boolean mostrar = true;
 
@@ -42,6 +45,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         descripcion = (TextView) findViewById(R.id.mm_descripcion);
         alarmasEtiqueta = (TextView) findViewById(R.id.mm_texto_alarmas);
         listaAlarmas = (ListView) findViewById(R.id.mm_lista_alarmas);
+        imagenMedicina = (ImageView) findViewById(R.id.mm_imagen);
         descripcion.setOnClickListener(this);
         alarmasEtiqueta.setOnClickListener(this);
         alarmasEtiqueta.setOnTouchListener(this);
@@ -141,6 +145,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
         nombre.setText(medicina.getNombre());
         porcion.setText(medicina.getStringPorcion(getBaseContext()));
         descripcion.setText(medicina.getDescripcion());
+        imagenMedicina.setImageDrawable(Drawable.createFromPath(medicina.getUrlImagen()));
         // Obtiene las alarmas de la medicina
         alarmas = Alarma.find(Alarma.class, "medicina = ?", Long.toString(medicina.getId()));
         ListaAlarmaAdaptador listaAlarmaAdaptador = new ListaAlarmaAdaptador(this, alarmas);

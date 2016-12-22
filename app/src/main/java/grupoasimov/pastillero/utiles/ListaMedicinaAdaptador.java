@@ -1,6 +1,9 @@
 package grupoasimov.pastillero.utiles;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +47,12 @@ public class ListaMedicinaAdaptador extends ArrayAdapter {
         porcion.setText(medicina.getStringPorcion(context));
 
         ImageView imagen = (ImageView) item.findViewById(R.id.imagen_single_post_circuito);
-        imagen.setImageResource(R.mipmap.pastilla);
+        if(medicina.getUrlImagen()!=null && medicina.getUrlImagen().length()>10) {
+            Drawable imagenMet = Drawable.createFromPath(medicina.getUrlImagen());
+            Bitmap imagenBitMap = ((BitmapDrawable) imagenMet).getBitmap();
+            imagen.setImageBitmap(imagenBitMap);
+            //imagen.setImageDrawable(imagenMet);
+        }
         // Devolvemos la vista para que se muestre en el ListView.
         return item;
     }
