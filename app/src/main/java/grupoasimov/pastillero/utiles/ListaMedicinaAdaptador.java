@@ -2,8 +2,7 @@ package grupoasimov.pastillero.utiles;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,10 +24,10 @@ import grupoasimov.pastillero.R;
  */
 
 public class ListaMedicinaAdaptador extends ArrayAdapter {
-    private final Context context;
-    private final List<Medicina> objects;
+    Context context;
+    List<Medicina> objects;
 
-    public ListaMedicinaAdaptador(Context context, List<Medicina> objects) {
+    public ListaMedicinaAdaptador(Context context, List objects) {
         super(context, R.layout.fila_medicina, objects);
         this.context = context;
         this.objects = objects;
@@ -51,10 +50,40 @@ public class ListaMedicinaAdaptador extends ArrayAdapter {
 
         ImageView imagen = (ImageView) item.findViewById(R.id.imagen_single_post_circuito);
         if(medicina.getUrlImagen()!=null && medicina.getUrlImagen().length()>10) {
-            Drawable imagenMet = Drawable.createFromPath(medicina.getUrlImagen());
-            Bitmap imagenBitMap = ((BitmapDrawable) imagenMet).getBitmap();
+            Bitmap imagenBitMap = crearBitmap(medicina.getUrlImagen());
             imagen.setImageBitmap(imagenBitMap);
+            //imagen.setImageDrawable(imagenMet);
         }
+        // Devolvemos la vista para que se muestre en el ListView.
         return item;
+    }
+    /**
+     * Reducimos la imagen para que ocupen menos
+     * @param image bitmap de la imagen
+     * @param maxSize tamaño imagen
+     * @return
+     */
+    public Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+
+        return Bitmap.createScaledBitmap(image, width, height, true);
+    }
+    public Bitmap crearBitmap(String url){
+
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        Bitmap bitmap = BitmapFactory.decodeFile(url,bmOptions);
+        Bitmap smallBm =getResizedBitmap(bitmap,400);
+        bitmap.recycle();
+        return smallBm;
     }
 }

@@ -36,7 +36,7 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
 
     /**
      * Inicializamos todos los elementos de la vista y mostramos las alarmas que estan activadas
-     * @param savedInstanceState
+     * @param savedInstanceState a
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

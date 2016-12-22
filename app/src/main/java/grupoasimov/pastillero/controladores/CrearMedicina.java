@@ -4,7 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.graphics.drawable.Drawable;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -19,18 +20,20 @@ import android.widget.ImageButton;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
 
 /**
- * Actividad para crear las medicinas
- *  @author Adrián Serrano
- * @author Carlos Martín
- * @author María Varela
+ * @author María Varela,Adrián Serrano, Carlos Martín
  */
+/**
+ * Actividad para crear las medicinas
+ */
+
 public class CrearMedicina extends AppCompatActivity implements View.OnClickListener {
 
     EditText nombreMedicina;
@@ -47,8 +50,7 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
     Medicina medicina;
 
-    final String TAG = "--En CREAR MEDICINA--";
-
+    String TAG = "--En CREAR MEDICINA--";
 
     /**
      * Se inicializa la vista
@@ -97,8 +99,15 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         if(medicina.getCantidadPorcion()!=0)
             porcionMedicina.setText(String.valueOf(medicina.getCantidadPorcion()));
         if(medicina.getUrlImagen()!=null && medicina.getUrlImagen().length()!=0) {
-            Drawable d = Drawable.createFromPath(medicina.getUrlImagen());
-            imagenMedicina.setBackground(d);
+            Bitmap bitmap = crearBitmap();
+            imagenMedicina.setImageBitmap(bitmap);
+
+            int size = imagenMedicina.getHeight()+imagenMedicina.getWidth();
+            Log.d(TAG,"Size: "+size);
+            Bitmap smallBm =getResizedBitmap(bitmap, size-700);
+            bitmap.recycle();
+            imagenMedicina.setImageBitmap(smallBm);
+
         }
     }
 
@@ -111,6 +120,7 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
         Log.d(TAG, "onSaveIntanceState");
         savedInstanceState.putSerializable("medicina", medicina);
+
 
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -127,9 +137,11 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         medicina = (Medicina) savedInstanceState.getSerializable("medicina");
         //Drawable d = Drawable.createFromPath(medicina.getUrlImagen()) ;
         //imagenMedicina.setBackground(d);
-
+        Bitmap bitmap = crearBitmap();
+        imagenMedicina.setImageBitmap(bitmap);
         if(medicina!=null && medicina.getUrlImagen()==null)
             medicina.setUrlImagen("nulo");
+        Log.d(TAG, medicina.getUrlImagen());
     }
 
     /**
@@ -175,10 +187,9 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
      */
     private File createImageFile() throws IOException {
         // Create an image file name
-        //String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String timeStamp = String.valueOf((int)Calendar.getInstance().getTimeInMillis());
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getAlbumStorageDir(getApplication());
+        File storageDir = getAlbumStorageDir(getApplication(),"pillPhotoAlbum");
         File image = File.createTempFile(
                 imageFileName,  /* prefix */
                 ".jpg",         /* suffix */
@@ -193,11 +204,11 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
     /**
      *
      * @param context de la aplicacion , necesario para obtener el directorio
+     * @param albumName el nombre que tendra el album de fotos
      * @return el directorio donde se guardaran las fotos
      */
-    public File getAlbumStorageDir(Context context) {
+    public File getAlbumStorageDir(Context context, String albumName) {
         // Get the directory for the app's private pictures directory.
-        String albumName = "pillPhotoAlbum";
         File file = new File(context.getExternalFilesDir(
                 Environment.DIRECTORY_PICTURES), albumName);
         if (!file.mkdirs()) {
@@ -265,13 +276,45 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
                 Log.d(TAG,"ESTOY EN ON ACTIVITY RESULT !!!!!!!!!!");
                 medicina.setUrlImagen(rutaFotoActual);
-                Drawable d = Drawable.createFromPath(medicina.getUrlImagen()) ;
+                Bitmap smallBm = crearBitmap();
+                imagenMedicina.setImageBitmap(smallBm);
 
-                imagenMedicina.setBackground(d);
 
 
             }
         }
 
+    }
+
+    /**
+     * Reducimos la imagen para que ocupen menos
+     * @param image bitmap de la imagen
+     * @param maxSize tamaño imagen
+     * @return
+     */
+    public Bitmap getResizedBitmap(Bitmap image, int maxSize) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        float bitmapRatio = (float) width / (float) height;
+        if (bitmapRatio > 1) {
+            width = maxSize;
+            height = (int) (width / bitmapRatio);
+        } else {
+            height = maxSize;
+            width = (int) (height * bitmapRatio);
+        }
+
+        return Bitmap.createScaledBitmap(image, width, height, true);
+    }
+    public Bitmap crearBitmap(){
+
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        Bitmap bitmap = BitmapFactory.decodeFile(medicina.getUrlImagen(),bmOptions);
+        int size = imagenMedicina.getHeight()+imagenMedicina.getWidth();
+        Log.d(TAG,"Size: "+size);
+        Bitmap smallBm =getResizedBitmap(bitmap, size-700);
+        bitmap.recycle();
+        return smallBm;
     }
 }

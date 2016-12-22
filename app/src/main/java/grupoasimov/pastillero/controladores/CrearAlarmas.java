@@ -45,7 +45,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
     /**
      * Inicializamos los componentes de la vista
-     * @param savedInstanceState
+     * @param savedInstanceState aa
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
     /**
      * Caso Nueva hora , añade otro timePicker para añadir mas horas a la alarma
      * Caso guardar, guarda toda la información relativa a la alarma
-     * @param v
+     * @param v vista que llama
      */
     @Override
     public void onClick(View v) {

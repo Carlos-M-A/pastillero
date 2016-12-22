@@ -26,11 +26,9 @@
             <ImageView
                 android:layout_width="100dp"
                 app:srcCompat="@mipmap/pastilla"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"
                 android:id="@+id/mm_imagen"
-                android:layout_alignParentEnd="true"
-                android:layout_height="100dp" />
+                android:layout_height="100dp"
+                android:contentDescription="@string/editar"/>
 
             <Space
                 android:layout_height="match_parent"

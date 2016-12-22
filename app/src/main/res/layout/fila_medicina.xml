@@ -39,7 +39,8 @@
                         android:id="@+id/imagen_single_post_circuito"
                         android:src="@drawable/border_style"
                         android:scaleType="centerCrop"
-                        android:layout_height="100dp" />
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/editar"/>
                 </LinearLayout>
 
                 <LinearLayout
