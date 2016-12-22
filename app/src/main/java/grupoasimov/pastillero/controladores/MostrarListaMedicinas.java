@@ -61,10 +61,6 @@ public class MostrarListaMedicinas extends AppCompatActivity  implements Adapter
                 i.putExtra("actualizar", false);
                 startActivity(i);
                 return true;
-            case R.id.menu_listar_medicina_nuevo_otro:
-                Intent a = new Intent(this, AgregarActivity.class);
-                startActivity(a);
-                return true;
             case R.id.menu_listar_medicina_paciente_cuidador:
                 Intent e = new Intent(this, MostrarPacienteCuidador.class);
                 startActivity(e);

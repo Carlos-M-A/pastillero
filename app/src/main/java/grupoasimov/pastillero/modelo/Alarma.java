@@ -20,7 +20,6 @@ public class Alarma extends SugarRecord implements Serializable{
     private int hora;
     private int minuto;
 
-    private int cadaXDias;
     private boolean lunes;
     private boolean martes;
     private boolean miercoles;
@@ -38,7 +37,6 @@ public class Alarma extends SugarRecord implements Serializable{
     public Alarma(Medicina medicina) {
         this.medicina = medicina;
         nota = "";
-        cadaXDias = 0;
     }
 
     public Medicina getMedicina() {
@@ -63,14 +61,6 @@ public class Alarma extends SugarRecord implements Serializable{
 
     public void setMinuto(int minuto) {
         this.minuto = minuto;
-    }
-
-    public int getCadaXDias() {
-        return cadaXDias;
-    }
-
-    public void setCadaXDias(int cadaXDias) {
-        this.cadaXDias = cadaXDias;
     }
 
     public boolean isLunes() {
@@ -151,7 +141,6 @@ public class Alarma extends SugarRecord implements Serializable{
                 "medicina=" + medicina +
                 ", hora=" + hora +
                 ", minuto=" + minuto +
-                ", cadaXDias=" + cadaXDias +
                 ", lunes=" + lunes +
                 ", martes=" + martes +
                 ", miercoles=" + miercoles +
@@ -176,7 +165,6 @@ public class Alarma extends SugarRecord implements Serializable{
     public String getStringDiasCorto(Context context){
 
         String cadenaDias = "";
-        if(cadaXDias==0) {
             if (isLunes()) cadenaDias = cadenaDias + " " + context.getString(R.string.lunes_corto);
             if (isMartes()) cadenaDias = cadenaDias + " " + context.getString(R.string.martes_corto);
             if (isMiercoles()) cadenaDias = cadenaDias + " " + context.getString(R.string.miercoles_corto);
@@ -184,15 +172,12 @@ public class Alarma extends SugarRecord implements Serializable{
             if (isViernes()) cadenaDias = cadenaDias + " " + context.getString(R.string.viernes_corto);
             if (isSabado()) cadenaDias = cadenaDias + " " + context.getString(R.string.sabado_corto);
             if (isDomingo()) cadenaDias = cadenaDias + " " + context.getString(R.string.domingo_corto);
-        } else{
-            cadenaDias = "Cada " + Integer.toString(cadaXDias) + " dias";
-        }
+
         return cadenaDias;
     }
 
     public String getStringDiasLargo(Context context){
         String cadenaDias = "";
-        if(cadaXDias==0) {
             if (isLunes()) cadenaDias = cadenaDias + " " + context.getString(R.string.lunes_largo);
             if (isMartes()) cadenaDias = cadenaDias + " " + context.getString(R.string.martes_largo);
             if (isMiercoles()) cadenaDias = cadenaDias + " " + context.getString(R.string.miercoles_largo);
@@ -201,9 +186,6 @@ public class Alarma extends SugarRecord implements Serializable{
             if (isSabado()) cadenaDias = cadenaDias + " " + context.getString(R.string.sabado_largo);
             if (isDomingo()) cadenaDias = cadenaDias + " " + context.getString(R.string.domingo_largo);
 
-        } else{
-            cadenaDias = "Cada " + Integer.toString(cadaXDias) + " dias";
-        }
         return cadenaDias;
     }
 

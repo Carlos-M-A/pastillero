@@ -12,6 +12,4 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="@string/nueva_medicina"
         android:orderInCategory="2"/>
-    <item android:title="añadir otro"
-        android:id="@+id/menu_listar_medicina_nuevo_otro" />
 </menu>

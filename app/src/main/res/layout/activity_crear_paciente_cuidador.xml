@@ -33,46 +33,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/nombre"
                 android:ems="10"
                 android:id="@+id/cpc_nombre_paciente"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/nombre" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/apellidos"
                 android:ems="10"
                 android:id="@+id/cpc_apellidos_paciente"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/apellidos" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/direccion"
                 android:ems="10"
                 android:id="@+id/cpc_direccion_paciente"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/direccion" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:text="@string/telefono"
                 android:ems="10"
                 android:id="@+id/cpc_telefono_paciente"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/telefono" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/email"
                 android:ems="10"
                 android:id="@+id/cpc_email_paciente"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/email" />
 
             <Space
                 android:layout_width="match_parent"
@@ -93,44 +93,44 @@
                 android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/cpc_nombre_cuidador"
-                android:text="@string/nombre"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/nombre" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/apellidos"
                 android:ems="10"
                 android:id="@+id/cpc_apellidos_cuidador"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/apellidos" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/direccion"
                 android:ems="10"
                 android:id="@+id/cpc_direccion_cuidador"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/direccion" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/telefono"
                 android:ems="10"
                 android:id="@+id/cpc_telefono_cuidador"
                 android:inputType="phone"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/telefono" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="@string/email"
                 android:ems="10"
                 android:id="@+id/cpc_email_cuidador"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/email" />
 
             <Space
                 android:layout_width="match_parent"

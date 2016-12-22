@@ -24,20 +24,24 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 app:srcCompat="@mipmap/pastilla"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
                 android:id="@+id/mm_imagen"
                 android:layout_alignParentEnd="true"
-                android:layout_height="112dp"
-                android:layout_weight="1" />
+                android:layout_height="100dp" />
+
+            <Space
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_width="5dp" />
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="0.70"
+                android:layout_width="wrap_content">
 
                 <TextView
                     android:text="NOMBRE MEDICINA"

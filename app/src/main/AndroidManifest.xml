@@ -7,6 +7,7 @@
         android:maxSdkVersion="18" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 
     <uses-feature
         android:name="android.hardware.camera"
@@ -25,10 +26,6 @@
         <activity
             android:name=".controladores.CrearAlarmas"
             android:label="@string/title_activity_CrearAlarmas" />
-        <activity
-            android:name=".controladores.AgregarActivity"
-            android:label="@string/title_activity_agregar"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".controladores.MostrarListaMedicinas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,7 +51,7 @@
 
         <meta-data
             android:name="DATABASE"
-            android:value="bd_pastillero6.db" />
+            android:value="bd_pastillero7.db" />
         <meta-data
             android:name="VERSION"
             android:value="1" />
@@ -86,7 +83,8 @@
         <receiver
             android:name=".recibidores.AvisoDeAlarma"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true">
+        </receiver>
 
         <activity android:name=".controladores.AlarmaDeMedicinas"></activity>
     </application>

@@ -59,4 +59,5 @@
     <string name="alarmas">ALARMAS</string>
     <string name="debes_tomar">Debes tomar</string>
     <string name="medicinas">medicinas</string>
+    <string name="tomado">LO HE TOMADO</string>
 </resources>

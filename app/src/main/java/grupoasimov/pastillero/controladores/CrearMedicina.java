@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
@@ -44,7 +42,6 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
     Medicina medicina;
 
-    CameraDialog dialogo;
     String TAG = "--En CREAR MEDICINA--";
 
 
@@ -66,7 +63,7 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
 
 
-        if(getIntent().getBooleanExtra("actualizar", true)==true){
+        if(getIntent().getBooleanExtra("actualizar", true)){
             medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
             nombreMedicina.setText(medicina.getNombre());
             descripcionMedicina .setText(medicina.getDescripcion());
@@ -126,22 +123,27 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
 
             case R.id.cm_guardar:
-                medicina.setNombre(nombreMedicina.getText().toString());
-                medicina.setDescripcion(descripcionMedicina.getText().toString());
-                medicina.setCantidadPorcion(Integer.parseInt(porcionMedicina.getText().toString()));
+                int cantidadPorcion = 100;
+                String nombre = getString(R.string.nombre);
+                String descripcion = getString(R.string.descripcion);
+                if(nombreMedicina.getText().length()!=0)
+                    nombre = nombreMedicina.getText().toString();
+                if(descripcionMedicina.getText().length()!=0)
+                    descripcion = descripcionMedicina.getText().toString();
+                if(porcionMedicina.getText().length()!=0)
+                    cantidadPorcion = Integer.parseInt(porcionMedicina.getText().toString());
                 Log.d("CREAR MEDICINA", "url: " + medicina.getUrlImagen());
+
+                medicina.setNombre(nombre);
+                medicina.setDescripcion(descripcion);
+                medicina.setCantidadPorcion(cantidadPorcion);
                 medicina.save();
 
                 finish();
                 break;
 
             case R.id.cm_imagen:
-                /*dialogo = new CameraDialog();
-                dialogo.setMedicina(medicina);
-
-                dialogo.show(getFragmentManager(),TAG);*/
                 dispatchTakePictureIntent();
-
                 break;
         }
     }

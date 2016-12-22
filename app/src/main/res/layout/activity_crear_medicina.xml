@@ -31,13 +31,14 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/nombre"
+
                 android:ems="10"
                 android:id="@+id/cm_nombre"
                 android:selectAllOnFocus="true"
                 android:textAlignment="center"
                 android:layout_weight="1"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:hint="@string/nombre" />
 
             <Space
                 android:layout_width="match_parent"
@@ -60,11 +61,11 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/cm_porcion"
-                    android:text="100"
                     android:selectAllOnFocus="true"
                     android:textAlignment="center"
                     android:layout_weight="0.42"
-                    android:layout_width="match_parent" />
+                    android:layout_width="match_parent"
+                    android:hint="100" />
             </LinearLayout>
 
             <Space
@@ -76,10 +77,10 @@
                 android:inputType="textMultiLine"
                 android:ems="10"
                 android:id="@+id/cm_descripcion"
-                android:text="@string/descripcion"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:selectAllOnFocus="true" />
+                android:selectAllOnFocus="true"
+                android:hint="@string/descripcion" />
 
             <Button
                 android:text="@string/guardar"

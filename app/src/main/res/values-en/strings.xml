@@ -59,4 +59,5 @@
     <string name="alarmas">ALARMS</string>
     <string name="debes_tomar">You must take</string>
     <string name="medicinas">medicines</string>
+    <string name="tomado">I HAVE TAKEN IT</string>
 </resources>

@@ -146,9 +146,9 @@
                     android:inputType="number"
                     android:ems="10"
                     android:id="@+id/ca_porcion"
-                    android:text="100"
                     android:selectAllOnFocus="true"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:hint="100" />
             </LinearLayout>
 
             <Space
@@ -162,10 +162,10 @@
                 android:id="@+id/ca_nota"
                 android:layout_weight="0.16"
                 android:layout_height="150dp"
-                android:text="@string/nota_alarma"
                 android:selectAllOnFocus="true"
                 android:singleLine="false"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:hint="@string/nota_alarma" />
 
             <Space
                 android:layout_width="match_parent"

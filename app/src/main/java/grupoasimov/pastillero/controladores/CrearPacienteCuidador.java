@@ -71,16 +71,50 @@ public class CrearPacienteCuidador extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View v) {
-        paciente.setNombre(nombrePaciente.getText().toString());
-        paciente.setApellidos(apellidosPaciente.getText().toString());
-        paciente.setDireccion(direccionPaciente.getText().toString());
-        paciente.setTelefono(telefonoPaciente.getText().toString());
-        paciente.setEmail(emailPaciente.getText().toString());
-        cuidador.setNombre(nombreCuidador.getText().toString());
-        cuidador.setApellidos(apellidosCuidador.getText().toString());
-        cuidador.setDireccion(direccionCuidador.getText().toString());
-        cuidador.setTelefono(telefonoCuidador.getText().toString());
-        cuidador.setEmail(emailCuidador.getText().toString());
+        String nombreP = getString(R.string.nombre);
+        String apellidosP = getString(R.string.apellidos);
+        String direccionP = getString(R.string.direccion);
+        String telefonoP = getString(R.string.telefono);
+        String emailP = getString(R.string.email);
+        String nombreC = getString(R.string.nombre);
+        String apellidosC = getString(R.string.apellidos);
+        String direccionC = getString(R.string.direccion);
+        String telefonoC = getString(R.string.telefono);
+        String emailC = getString(R.string.email);
+
+        if(nombrePaciente.getText().length()!=0)
+            nombreP = nombrePaciente.getText().toString();
+        if(apellidosPaciente.getText().length()!=0)
+            apellidosP = apellidosPaciente.getText().toString();
+        if(direccionPaciente.getText().length()!=0)
+            direccionP = direccionPaciente.getText().toString();
+        if(telefonoPaciente.getText().length()!=0)
+            telefonoP = telefonoPaciente.getText().toString();
+        if(emailPaciente.getText().length()!=0)
+            emailP = emailPaciente.getText().toString();
+        if(nombreCuidador.getText().length()!=0)
+            nombreC = nombreCuidador.getText().toString();
+        if(apellidosCuidador.getText().length()!=0)
+            apellidosC = apellidosCuidador.getText().toString();
+        if(direccionCuidador.getText().length()!=0)
+            direccionC = direccionCuidador.getText().toString();
+        if(telefonoCuidador.getText().length()!=0)
+            telefonoC = telefonoCuidador.getText().toString();
+        if(emailCuidador.getText().length()!=0)
+            emailC = emailCuidador.getText().toString();
+
+
+        paciente.setNombre(nombreP);
+        paciente.setApellidos(apellidosP);
+        paciente.setDireccion(direccionP);
+        paciente.setTelefono(telefonoP);
+        paciente.setEmail(emailP);
+        cuidador.setNombre(nombreC);
+        cuidador.setApellidos(apellidosC);
+        cuidador.setDireccion(direccionC);
+        cuidador.setTelefono(telefonoC);
+        cuidador.setEmail(emailC);
+
 
         paciente.save();
         cuidador.save();

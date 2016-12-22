@@ -64,7 +64,7 @@ public class AvisoDeAlarma extends BroadcastReceiver {
         Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         mBuilder.setSound(uri);
         mBuilder.setAutoCancel(true);
-        mBuilder.setLights(Color.BLUE, 500, 500);
+        //mBuilder.setLights(Color.BLUE, 500, 500);
         long[] pattern = {500,500,500,500,500,500,500,500,500};
         mBuilder.setVibrate(pattern);
 

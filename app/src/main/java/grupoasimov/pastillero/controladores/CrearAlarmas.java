@@ -1,9 +1,5 @@
 package grupoasimov.pastillero.controladores;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,14 +16,11 @@ import java.util.ArrayList;
 import grupoasimov.pastillero.modelo.Alarma;
 import grupoasimov.pastillero.modelo.Medicina;
 import grupoasimov.pastillero.R;
-import grupoasimov.pastillero.recibidores.AvisoActualizarAlarmas;
 import grupoasimov.pastillero.utiles.GestorAlarmas;
 
 public class CrearAlarmas extends AppCompatActivity implements View.OnClickListener {
 
     TextView nombreMedicina;
-    //DatePicker fechaInicio; Usar en caso de que se usen fechas
-    //DatePicker fechaFin;
     CheckBox checkBoxLunes;
     CheckBox checkBoxMartes;
     CheckBox checkBoxMiercoles;
@@ -51,8 +44,6 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
 
         // Inicializamos componentes de la interfaz de usuario
         nombreMedicina = (TextView) findViewById(R.id.ca_nombre_medicina);
-        //fechaInicio = (DatePicker) findViewById(R.id.fechaInicio);
-        //fechaFin = (DatePicker) findViewById(R.id.fechaFin);
         checkBoxLunes = (CheckBox) findViewById(R.id.ca_lunes);
         checkBoxMartes = (CheckBox) findViewById(R.id.ca_martes);
         checkBoxMiercoles = (CheckBox) findViewById(R.id.ca_miercoles);
@@ -60,7 +51,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
         checkBoxViernes = (CheckBox) findViewById(R.id.ca_viernes);
         checkBoxSabado = (CheckBox) findViewById(R.id.ca_sabado);
         checkBoxDomingo = (CheckBox) findViewById(R.id.ca_domingo);
-        horasAlarma = new ArrayList<TimePicker>();
+        horasAlarma = new ArrayList<>();
         listaHorasAlarma = (LinearLayout) findViewById(R.id.ca_lista_horas) ;
         horasAlarma.add((TimePicker)findViewById(R.id.ca_hora));
         nuevaHora = (Button) findViewById(R.id.ca_nueva_hora);
@@ -87,10 +78,6 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                 horasAlarma.add(nuevaHoraAlarma);
                 break;
             case R.id.ca_guardar:
-                /* Calendar fechaI = Calendar.getInstance();
-                Calendar fechaF = Calendar.getInstance();
-                fechaI.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDayOfMonth());
-                fechaF.set(fechaInicio.getYear(), fechaInicio.getMonth(), fechaInicio.getDayOfMonth()); */
 
                 boolean lunes = checkBoxLunes.isChecked();
                 boolean martes = checkBoxMartes.isChecked();
@@ -99,13 +86,16 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                 boolean viernes = checkBoxViernes.isChecked();
                 boolean sabado = checkBoxSabado.isChecked();
                 boolean domingo = checkBoxDomingo.isChecked();
-                int cantidadToma = Integer.parseInt(porcionAlarma.getText().toString());
-                String nota = notaAlarma.getText().toString();
+
+                int cantidadToma = 100;
+                String nota = getString(R.string.nota_alarma);
+                if(porcionAlarma.getText().length()!=0)
+                    cantidadToma = Integer.parseInt(porcionAlarma.getText().toString());
+                if(notaAlarma.getText().length()!=0)
+                    nota = notaAlarma.getText().toString();
 
                 for (TimePicker hora: horasAlarma) {
                     Alarma alarma = new Alarma(medicina);
-                    //alarma.setFechaInicio(fechaI);
-                    //alarma.setFechaFin(fechaF);
 
                     alarma.setLunes(lunes);
                     alarma.setMartes(martes);
@@ -114,6 +104,7 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     alarma.setViernes(viernes);
                     alarma.setSabado(sabado);
                     alarma.setDomingo(domingo);
+
 
                     alarma.setCantidadToma(cantidadToma);
                     alarma.setNota(nota);
@@ -124,7 +115,8 @@ public class CrearAlarmas extends AppCompatActivity implements View.OnClickListe
                     alarma.setHora(hora.getCurrentHour());
                     alarma.setMinuto(hora.getCurrentMinute());
 
-                    alarma.save();
+                    if(lunes || martes || miercoles || jueves || viernes || sabado || domingo)
+                        alarma.save();
 
                     GestorAlarmas.activarAlarma(getBaseContext());
                 }
