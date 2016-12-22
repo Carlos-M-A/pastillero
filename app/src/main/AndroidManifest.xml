@@ -48,6 +48,10 @@
         <activity
             android:name=".controladores.MostrarAyuda"
             android:label="@string/title_activity_MostrarAyuda" />
+        <activity
+            android:name=".controladores.AlarmaDeMedicinas">
+            android:label="@string/title_activity_AlarmaDeMedicinas"
+        </activity>
 
         <meta-data
             android:name="DATABASE"
@@ -85,8 +89,6 @@
             android:enabled="true"
             android:exported="true">
         </receiver>
-
-        <activity android:name=".controladores.AlarmaDeMedicinas"></activity>
     </application>
 
 </manifest>

@@ -63,29 +63,28 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
 
 
 
-        if(getIntent().getBooleanExtra("actualizar", true)){
-            medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
-            nombreMedicina.setText(medicina.getNombre());
-            descripcionMedicina .setText(medicina.getDescripcion());
-            porcionMedicina.setText(String.valueOf(medicina.getCantidadPorcion()));
-
-            Drawable d = Drawable.createFromPath(medicina.getUrlImagen()) ;
-
-            imagenMedicina.setBackground(d);
-
-        }else {
-
-            if (medicina != null) {
-                Drawable d = Drawable.createFromPath(medicina.getUrlImagen());
-
-                imagenMedicina.setBackground(d);
-            } else {
-                medicina = new Medicina();
-            }
-        }
+        actualizaMedicina();
+        actualizaVista();
     }
 
-
+    private void actualizaMedicina(){
+        medicina = (Medicina)getIntent().getSerializableExtra("medicina");
+        if(getIntent().getBooleanExtra("actualizar", true))
+            medicina = Medicina.findById(Medicina.class, getIntent().getLongExtra("idMedicina", 0));
+        Log.d(TAG, "id medicina: " + medicina.getId());
+    }
+    private void actualizaVista(){
+        if(medicina.getNombre().length()!=0)
+            nombreMedicina.setText(medicina.getNombre());
+        if(medicina.getDescripcion().length()!=0)
+            descripcionMedicina.setText(medicina.getDescripcion());
+        if(medicina.getCantidadPorcion()!=0)
+            porcionMedicina.setText(String.valueOf(medicina.getCantidadPorcion()));
+        if(medicina.getUrlImagen()!=null && medicina.getUrlImagen().length()!=0) {
+            Drawable d = Drawable.createFromPath(medicina.getUrlImagen());
+            imagenMedicina.setBackground(d);
+        }
+    }
 
     /**
      * Para guardar el estado de la aplicacion antes de que se rote la pantalla
@@ -110,10 +109,10 @@ public class CrearMedicina extends AppCompatActivity implements View.OnClickList
         Log.d(TAG, "onRestoreIntanceState");
 
         medicina = (Medicina) savedInstanceState.getSerializable("medicina");
-        Drawable d = Drawable.createFromPath(medicina.getUrlImagen()) ;
+        //Drawable d = Drawable.createFromPath(medicina.getUrlImagen()) ;
+        //imagenMedicina.setBackground(d);
 
-        imagenMedicina.setBackground(d);
-        if(medicina.getUrlImagen()==null)
+        if(medicina!=null && medicina.getUrlImagen()==null)
             medicina.setUrlImagen("nulo");
         Log.d(TAG, medicina.getUrlImagen());
     }

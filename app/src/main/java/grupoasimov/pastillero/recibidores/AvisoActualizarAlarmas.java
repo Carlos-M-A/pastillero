@@ -24,7 +24,6 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
-        Log.d("Lo acabas de encender", "ENCENDIDOoooooooooooooooooooooooooooooooooooooooooooo");
 
         actualizarAlarmas(context);
 
@@ -39,7 +38,6 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
 
     public void actualizarAlarmas(Context context){
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(ALARM_SERVICE);
-        Log.d("ALARMA", "ENTRAMOS EN ACTUALIZAR ALARMAS");
 
         Intent intent3 = new Intent(context, AvisoDeAlarma.class);
         PendingIntent pendingIntent2 = PendingIntent.getBroadcast(
@@ -56,7 +54,6 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
             alarmaCalendarBORRAR.set(Calendar.MINUTE, alarma.getMinuto());
             alarmaCalendarBORRAR.set(Calendar.SECOND, 0);
             alarmaCalendarBORRAR.set(Calendar.MILLISECOND, 0);
-            Log.d("ALARMA", alarmaCalendarBORRAR.toString());
             if(alarma.debeSerActivada()) {
 
                 Calendar alarmaCalendar = Calendar.getInstance();
@@ -64,7 +61,6 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
                 alarmaCalendar.set(Calendar.MINUTE, alarma.getMinuto());
                 alarmaCalendar.set(Calendar.SECOND, 0);
                 alarmaCalendar.set(Calendar.MILLISECOND, 0);
-                Log.d("ALARMA - ACTIVADA", alarmaCalendar.toString());
                 Intent intent2 = new Intent(context, AvisoDeAlarma.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(
                         context.getApplicationContext(), (int)alarmaCalendar.getTimeInMillis(), intent2, PendingIntent.FLAG_UPDATE_CURRENT);
@@ -88,7 +84,6 @@ public class AvisoActualizarAlarmas extends BroadcastReceiver {
             alarmaCalendar.add(Calendar.SECOND, (30 - (alarmaCalendar.get(Calendar.SECOND))));
         }
         alarmaCalendar.add(Calendar.MILLISECOND, -(alarmaCalendar.get(Calendar.MILLISECOND)));
-        Log.d("SIGUIENTE ACT", alarmaCalendar.toString());
 
 
         //Programamos la llamada para la siguiente actualizacion

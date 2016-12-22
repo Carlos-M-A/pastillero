@@ -20,13 +20,9 @@
     <string name="title_activity_MostrarPacienteCuidador">Datos Paciente Cuidador</string>
     <string name="title_activity_MostrarMedicina">Datos Medicina</string>
     <string name="title_activity_MostrarAyuda">Ayuda</string>
+    <string name="title_activity_AlarmaDeMedicinas">Toma medicinas</string>
 
     <!-- Para los layouts -->
-    <string name="AyudaText">
-        SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
-        El Aburrimiento\r\n\r
-        No hablo más...\r\n\r
-        Me morí.\r\n\r	</string>
 
     <string name="nombre">Nombre</string>
     <string name="descripcion">Descripción</string>
@@ -60,4 +56,36 @@
     <string name="debes_tomar">Debes tomar</string>
     <string name="medicinas">medicinas</string>
     <string name="tomado">LO HE TOMADO</string>
+
+       <string name="AyudaText">
+        Pappstillero\r\n
+Instrucciones de uso para el cuidador.\r\n\r\n
+
+
+Crear Medicina\r\n\r\n
+1º Deberas crear las medicinas, para ello deberás acceder al menú superior derecho, y pulsar sobre "Nueva Medicina".\r\n
+2º Rellene los campos, y añada una foto para el medicamento.\r\n
+3º Guarde pulsando el botón.\r\n\r\n
+
+
+Crear Alarma\r\n\r\n
+1º Pulse sobre medicina a la que añadir la alarma.\r\n
+2º Una vez en la medicina, menú superior derecho, pulse sobre "Nueva alarma".\r\n
+3º Rellene los campos - días, horas, notas si fuera necesario -.\r\n
+4º Guarde la nueva alarma.\r\n\r\n
+
+
+Borrar Medicina\r\n\r\n
+1º Pulse sobre la medicina que desea borrar.\r\n
+2º Menú superior derecho, seleccione Borrar.\r\n\r\n
+
+Añadir datos del paciente y el cuidador\r\n\r\n
+1º Menú superior derecho, pulsar sobre la opción "Datos paciente-cuidador". \r\n
+2º Menú superior derecho, editar.
+3º Rellenar todos los datos y después pulsar el botón de guardar. \r\n\r\n
+
+Editar o borrar datos de paciente\r\n\r\n
+1º Para borrar los datos, menú superior derecho, pulse sobre borrar.\r\n
+2º Para modificar los datos, menú superior derecho, pulse sobre editar.\r\n\r\n
+	</string>
 </resources>

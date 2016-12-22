@@ -19,13 +19,10 @@
     <string name="title_activity_MostrarPacienteCuidador">Patient-Carer data</string>
     <string name="title_activity_MostrarMedicina">Medicine data</string>
     <string name="title_activity_MostrarAyuda">Help</string>
+    <string name="title_activity_AlarmaDeMedicinas">Take Medicines</string>
+
 
     <!-- Para los layouts -->
-    <string name="AyudaText">
-        SECCIÓN EN CONSTRUCCIÓN, ENTRETENGASE CON ESTE POEMA.\r\n\r\r\n\r
-        El Aburrimiento\r\n\r
-        No hablo más...\r\n\r
-        Me morí.\r\n\r	</string>
 
     <string name="nombre">Name</string>
     <string name="descripcion">Description</string>
@@ -59,4 +56,35 @@
     <string name="debes_tomar">You must take</string>
     <string name="medicinas">medicines</string>
     <string name="tomado">I HAVE TAKEN IT</string>
+
+    <string name="AyudaText">
+        Pappstillero\r\n
+       User Instructions\r\n\r\n
+
+Create Medicine\r\n\r\n
+1º You must create the medicines, go to the top-right menu, and click on "New Medicine".\r\n
+2º Fill the gaps, and put a medicine photo.\r\n
+3º Save it.\r\n\r\n
+
+
+Create Alarm\r\n\r\n
+1º Click on the medicine you want to add the alarm.\r\n
+2º When you are on the medicine screen, click, top-right menu, click on "New Alarm".\r\n
+3º Fill the gaps - days, hours, and notes if necessary -.\r\n
+4º Save the alarm\r\n\r\n
+
+
+Delete Medicine\r\n\r\n
+1º Select the medicine you want to delete.\r\n
+2º Top-right menu, click on "Delete".\r\n\r\n
+
+Add patient and carer data\r\n\r\n
+1º Top-right menu, click on Menu superior derecho, pulsar sobre la opción "Patient-Carer data". \r\n
+2º Top-right menu,edit.\r\n
+3º Fill the gaps, and save it.\r\n\r\n
+
+Edit or modify patient and carer data\r\n\r\n
+1º To delete data, click on Delete, on top-right menu.\r\n
+2º To modify data, click on Edit, on top-right menu.\r\n\r\n
+        </string>
 </resources>

@@ -10,7 +10,7 @@ import java.io.Serializable;
 import grupoasimov.pastillero.R;
 
 /**
- * Created by ferreri on 15/11/16.
+ *
  */
 
 public class Medicina extends SugarRecord implements Serializable {
@@ -20,13 +20,10 @@ public class Medicina extends SugarRecord implements Serializable {
     private String urlImagen;
 
     public Medicina() {
-    }
-
-    public Medicina(String nombre, String descripcion, int cantidadPorcion, String urlImagen) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.cantidadPorcion = cantidadPorcion;
-        this.urlImagen = urlImagen;
+        nombre = "";
+        descripcion = "";
+        cantidadPorcion = 0;
+        urlImagen = "";
     }
 
     public String getNombre() {

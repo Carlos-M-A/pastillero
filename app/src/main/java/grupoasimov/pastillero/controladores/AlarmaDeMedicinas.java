@@ -1,8 +1,8 @@
 package grupoasimov.pastillero.controladores;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -29,8 +29,6 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarma_de_medicinas);
 
-        Log.d("ALARMA DE MEDICINAS", "En el principio");
-
         imagenMedicina = (ImageView) findViewById(R.id.adm_imagen_medicina);
         nombreMedicina = (TextView) findViewById(R.id.adm_nombre_medicina);
         porcionAlarma = (TextView) findViewById(R.id.adm_porcion_alarma);
@@ -43,15 +41,11 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
         nuevosDatosAlarma();
 
 
-        for(Alarma alarma: alarmas){
-            Log.d("ALARMA DE MEDICINAS", alarma.toString());
-        }
-
     }
 
     private void nuevosDatosAlarma(){
         Alarma alarma = alarmas.get(contadorAlarmas);
-        imagenMedicina.setImageResource(R.mipmap.pastilla);
+        imagenMedicina.setImageDrawable(Drawable.createFromPath(alarma.getMedicina().getUrlImagen()));
         nombreMedicina.setText(alarma.getMedicina().getNombre());
         porcionAlarma.setText(alarma.getStringPorcion(getBaseContext()));
         notaAlarma.setText(alarma.getNota());

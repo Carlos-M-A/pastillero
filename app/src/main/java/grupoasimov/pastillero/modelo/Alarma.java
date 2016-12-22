@@ -10,7 +10,7 @@ import java.util.Calendar;
 import grupoasimov.pastillero.R;
 
 /**
- * Created by ferreri on 15/11/16.
+ *
  */
 
 public class Alarma extends SugarRecord implements Serializable{

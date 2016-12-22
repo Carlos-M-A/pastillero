@@ -89,6 +89,7 @@ public class MostrarMedicina extends AppCompatActivity implements View.OnClickLi
                 long id2 = medicina.getId();
                 i.putExtra("actualizar", true);
                 i.putExtra("idMedicina", id2);
+                i.putExtra("medicina", medicina);
                 startActivity(i);
                 return true;
 

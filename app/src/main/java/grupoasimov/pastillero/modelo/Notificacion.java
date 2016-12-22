@@ -7,7 +7,7 @@ import java.util.Calendar;
 
 
 /**
- * Created by ferreri on 15/11/16.
+ * 
  */
 
 public class Notificacion extends SugarRecord implements Serializable{

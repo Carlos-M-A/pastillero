@@ -5,20 +5,15 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.controladores.AlarmaDeMedicinas;
-import grupoasimov.pastillero.controladores.MostrarListaMedicinas;
 import grupoasimov.pastillero.modelo.Alarma;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
@@ -35,7 +30,6 @@ public class AvisoDeAlarma extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         ahora = Calendar.getInstance();
-        Log.d("Hay una alarma ahora", ahora.toString());
 
         alarmas = (ArrayList<Alarma>) Alarma.find(Alarma.class, "hora = ? AND minuto = ?", Integer.toString(ahora.get(Calendar.HOUR_OF_DAY))
                 , Integer.toString(ahora.get(Calendar.MINUTE)));
@@ -44,7 +38,6 @@ public class AvisoDeAlarma extends BroadcastReceiver {
                 alarmas.remove(alarma);
         }
 
-        Log.d("   Las alarmas son", alarmas.toString());
         creaNotificacion(context);
 
     }
@@ -55,7 +48,6 @@ public class AvisoDeAlarma extends BroadcastReceiver {
         mBuilder.setSmallIcon(R.mipmap.ic_launcher);
         mBuilder.setContentTitle(context.getString(R.string.debes_tomar) + " " + alarmas.size() + " " + context.getString(R.string.medicinas));
         String text = "";
-        //mBuilder.setContentText(text);
         for (Alarma alarma : alarmas) {
             text = text + alarma.getMedicina().getNombre() + ". ";
         }
@@ -64,7 +56,6 @@ public class AvisoDeAlarma extends BroadcastReceiver {
         Uri uri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         mBuilder.setSound(uri);
         mBuilder.setAutoCancel(true);
-        //mBuilder.setLights(Color.BLUE, 500, 500);
         long[] pattern = {500,500,500,500,500,500,500,500,500};
         mBuilder.setVibrate(pattern);
 
