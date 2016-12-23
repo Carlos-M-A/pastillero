@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import grupoasimov.pastillero.R;
 import grupoasimov.pastillero.modelo.Alarma;
+import grupoasimov.pastillero.modelo.Cuidador;
 import grupoasimov.pastillero.modelo.Paciente;
 
 /**
@@ -29,7 +30,7 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
     TextView porcionAlarma;
     TextView notaAlarma;
     Button botonTomado;
-    Paciente paciente;
+    Cuidador cuidador;
 
     int contadorAlarmas = 0;
     ArrayList<Alarma> alarmas;
@@ -59,8 +60,8 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
      * Enviar mensaje con confirmación de que la persona ha tomado la medicina
      */
     private void enviarConfirmacion(){
-        paciente = Paciente.listAll(Paciente.class).get(0);
-        String strPhone = paciente.getTelefono();
+        cuidador = Cuidador.listAll(Cuidador.class).get(0);
+        String strPhone = cuidador.getTelefono();
         String strMessage = "He tomado "+nombreMedicina.getText();
 
         Intent sendIntent = new Intent(Intent.ACTION_VIEW);
@@ -74,10 +75,10 @@ public class AlarmaDeMedicinas extends AppCompatActivity implements View.OnClick
      *Enviar confirmación mediante email
      */
     private void enviarEmail() {
-        paciente = Paciente.listAll(Paciente.class).get(0);
+        cuidador = Cuidador.listAll(Cuidador.class).get(0);
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, paciente.getEmail());
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, cuidador.getEmail());
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Medicinas");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "He tomado la medicina "+nombreMedicina.getText());
         emailIntent.setType("message/rfc822");

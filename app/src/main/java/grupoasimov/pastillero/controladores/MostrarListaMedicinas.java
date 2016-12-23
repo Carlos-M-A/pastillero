@@ -19,6 +19,7 @@ import grupoasimov.pastillero.utiles.ListaMedicinaAdaptador;
  * Actividad inicial de la aplicacion. Muestra una lista con todas las medicinas que fueron
  * introducidas. Para que la aplicacion funcione al instalarla desde Android Studio hay que
  * desactivar el Instant Run (File > Settings > Build, Execution,.. > Instant Run).
+ * En los emuladores puede dar fallos, pues se requiere enviar sms con la aplicacion.
  * @author Adrián Serrano
  * @author Carlos Martín
  * @author María Varela
